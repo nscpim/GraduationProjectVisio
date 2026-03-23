@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System;
 using UnityEngine;
 
 public class LessonManager : Manager
@@ -7,48 +9,71 @@ public class LessonManager : Manager
 
     private int currentStepIndex = 0;
 
-    public void InitializeLesson(LessonData lesson) 
+
+    public void InitializeLesson(LessonData lesson)
     {
         currentLesson = lesson;
         currentStepIndex = 0;
         AnnounceCurrentStep();
+        UpdateUI();
     }
 
-    public void ReceiveInput(KeyCode key, bool shiftHeld)
+
+    public void UpdateUI()
+    {
+        GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].keyName, GameManager.instance.displayKeyText, Color.orange,
+              currentLesson.steps[currentStepIndex].requiredKeys);
+    }
+
+    public void ReceiveInput(KeyCode key)
     {
         TypingStep step = currentLesson.steps[currentStepIndex];
 
-        if (key == step.targetKey && shiftHeld == step.requiresShift)
+        if (key == step.targetKey)
         {
-            GameManager.GetManager<AudioManager>().PlayCorrect();
-            currentStepIndex++;
-            AnnounceCurrentStep();
-        }
-        else
-        {
-            GameManager.GetManager<AudioManager>().PlayIncorrect();
+            bool allKeysHeld = true;
+            foreach (KeyCode requiredKey in step.requiredKeys)
+            {
+                if (!Input.GetKey(requiredKey))
+                {
+                    allKeysHeld = false;
+                    break;
+                }
+            }
+            if (allKeysHeld)
+            {
+                GameManager.GetManager<AudioManager>().PlayCorrect();
+                currentStepIndex++;
+                AnnounceCurrentStep();
+                UpdateUI();
+            }
+            else
+            {
+                GameManager.GetManager<AudioManager>().PlayIncorrect();
+                return;
+            }
+
         }
     }
 
-    private void AnnounceCurrentStep() 
+    private void AnnounceCurrentStep()
     {
         if (currentStepIndex >= currentLesson.steps.Count)
         {
             CompleteLesson();
             return;
         }
-
         GameManager.GetManager<AudioManager>().Speak(currentLesson.steps[currentStepIndex].instructionText);
 
-    
+
     }
 
-    private void CompleteLesson() 
+    private void CompleteLesson()
     {
         GameManager.GetManager<AudioManager>().Speak("Les afgerond.");
-        
+
     }
- 
+
 
 
 }

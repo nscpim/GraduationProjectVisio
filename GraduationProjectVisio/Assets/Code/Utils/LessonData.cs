@@ -13,6 +13,8 @@ public class LessonData : ScriptableObject
 public class TypingStep
 {
     public string instructionText;
-    public KeyCode targetKey;
-    public bool requiresShift;
+    public string keyName; //For ui purposes.
+    public KeyCode targetKey; //The main key 
+    public List<KeyCode> requiredKeys; //For combinations
+    public string instructionIfWrong;
 }

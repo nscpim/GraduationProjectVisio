@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class KeyboardInputManager : Manager
 {
-    public Action<KeyCode, bool> OnKeyPressed;
+    public Action<KeyCode> OnKeyPressed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Start()
@@ -24,12 +24,12 @@ public class KeyboardInputManager : Manager
             {
                 if (Input.GetKeyDown(key))
                 {
-                    OnKeyPressed?.Invoke(key, shiftHeld);
+                    OnKeyPressed?.Invoke(key);
                     Debug.Log($"Press key: {key}");
                     if (GameManager.GetManager<LessonManager>().currentLesson)
                     {
                         LessonManager lesson = GameManager.GetManager<LessonManager>();
-                        lesson.ReceiveInput(key, shiftHeld);
+                        lesson.ReceiveInput(key);
                     }
                 }
             }

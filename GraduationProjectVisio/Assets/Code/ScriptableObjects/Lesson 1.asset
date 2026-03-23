@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9b1f166716889468e4d61a7a1d4dd4, type: 3}
+  m_Name: Lesson 1
+  m_EditorClassIdentifier: Assembly-CSharp::LessonData
+  lessonName: Appel
+  steps:
+  - instructionText: Combinatie 1
+    keyName: A
+    targetKey: 97
+    requiredKeys: 32010000
+    instructionIfWrong: 
+  - instructionText: Combinatie 2
+    keyName: D
+    targetKey: 100
+    requiredKeys: 32010000
+    instructionIfWrong: 
+  - instructionText: Combinatie 3
+    keyName: W
+    targetKey: 119
+    requiredKeys: 3201000034010000
+    instructionIfWrong: 
+  - instructionText: 
+    keyName: 
+    targetKey: 0
+    requiredKeys: 
+    instructionIfWrong: 
+  - instructionText: 
+    keyName: 
+    targetKey: 0
+    requiredKeys: 
+    instructionIfWrong: 
+  - instructionText: 
+    keyName: 
+    targetKey: 0
+    requiredKeys: 
+    instructionIfWrong: 
+  - instructionText: 
+    keyName: 
+    targetKey: 0
+    requiredKeys: 
+    instructionIfWrong: 
+  - instructionText: 
+    keyName: 
+    targetKey: 0
+    requiredKeys: 
+    instructionIfWrong: 
+  - instructionText: 
+    keyName: 
+    targetKey: 0
+    requiredKeys: 
+    instructionIfWrong: 
+  - instructionText: 
+    keyName: 
+    targetKey: 0
+    requiredKeys: 
+    instructionIfWrong: 
