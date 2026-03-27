@@ -25,6 +25,7 @@ public class Timer
         this.uniqueID = uniqueID;
         this.gameObject = gameObject;
         this.name = name;
+        GameManager.instance.timers.Add(this);
     }
 
     public float TimeLeft()

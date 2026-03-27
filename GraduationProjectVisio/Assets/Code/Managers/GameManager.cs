@@ -1,7 +1,10 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     [Header("User Interface")]
     public TextMeshProUGUI displayKeyText;
+    public Button createProfileButton;
+    public InputField nameInputField;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
@@ -19,8 +24,15 @@ public class GameManager : MonoBehaviour
     public AudioSource voiceSource;
     public AudioSource feedbackSource;
     [Space(10)]
+    [Header("Save Load Manager")]
+    public List<ProfileData> profiles;
+    [SerializeField] private string fileName;
+    public string profileName;
+
+    [Space(10)]
     [Header("Timers")]
-    public List<Timer> timers;
+    public List<Timer> timers = new List<Timer>();
+    Timer autoSaveTimer;
 
     GameManager()
     {
@@ -38,6 +50,7 @@ public class GameManager : MonoBehaviour
          new SaveLoadManager(),
         };
     }
+
 
     public void Awake()
     {
@@ -67,8 +80,14 @@ public class GameManager : MonoBehaviour
             managers[i].Start();
         }
 
-        GetManager<LessonManager>().InitializeLesson(lessons[0]);
+        createProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().CreateProfileButton);
+
+        GameManager.GetManager<SaveLoadManager>().LoadSave();
+
+        autoSaveTimer = new Timer(0, "autosave");
+        autoSaveTimer.SetTimer(2);
     }
+
 
     // Update is called once per frame
     public void Update()
@@ -77,7 +96,24 @@ public class GameManager : MonoBehaviour
         {
             managers[i].Update();
         }
+        if (autoSaveTimer != null)
+        {
+            if (autoSaveTimer.isActive && autoSaveTimer.TimerDone())
+            {
+                // GetManager<SaveLoadManager>().SaveData();
+                Debug.Log("Auto Saved");
+                autoSaveTimer.RestartTimer();
+            }
+        }
+
     }
+
+    public List<IDataInterface> FindAllObjectsToSave()
+    {
+        IEnumerable<IDataInterface> allSavedObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IDataInterface>();
+        return new List<IDataInterface>(allSavedObjects);
+    }
+
 
     public Timer GetTimerByName(string name)
     {

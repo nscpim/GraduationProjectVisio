@@ -15,52 +15,46 @@ MonoBehaviour:
   lessonName: Appel
   steps:
   - instructionText: Combinatie 1
-    keyName: A
     targetKey: 97
-    requiredKeys: 32010000
+    requiredKeys: 16010000
     instructionIfWrong: 
   - instructionText: Combinatie 2
-    keyName: D
-    targetKey: 100
-    requiredKeys: 32010000
+    targetKey: 113
+    requiredKeys: 14010000
     instructionIfWrong: 
   - instructionText: Combinatie 3
-    keyName: W
-    targetKey: 119
-    requiredKeys: 3201000034010000
+    targetKey: 0
+    requiredKeys: 0000000000000000
     instructionIfWrong: 
   - instructionText: 
-    keyName: 
     targetKey: 0
     requiredKeys: 
     instructionIfWrong: 
   - instructionText: 
-    keyName: 
     targetKey: 0
     requiredKeys: 
     instructionIfWrong: 
   - instructionText: 
-    keyName: 
     targetKey: 0
     requiredKeys: 
     instructionIfWrong: 
   - instructionText: 
-    keyName: 
     targetKey: 0
     requiredKeys: 
     instructionIfWrong: 
   - instructionText: 
-    keyName: 
     targetKey: 0
     requiredKeys: 
     instructionIfWrong: 
   - instructionText: 
-    keyName: 
     targetKey: 0
     requiredKeys: 
     instructionIfWrong: 
   - instructionText: 
-    keyName: 
+    targetKey: 0
+    requiredKeys: 
+    instructionIfWrong: 
+  - instructionText: 
     targetKey: 0
     requiredKeys: 
     instructionIfWrong: 

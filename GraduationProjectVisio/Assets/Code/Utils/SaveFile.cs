@@ -1,16 +1,17 @@
 using UnityEngine;
 
-public class SaveFile : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+[System.Serializable]
+public class SaveFile
+{
+    public int lessonProgress;
+    public string name;
+    public LessonData lesson;
+
+    public SaveFile()
     {
-        
+        this.name = "";
+        this.lessonProgress = 0;
+        this.lesson = GameManager.instance.lessons[0];
     }
 }

@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class AudioManager : Manager
 {
-    public AudioSource voiceSource;
-    public AudioSource feedbackSource;
+    
 
 
     public void Speak(string text)
