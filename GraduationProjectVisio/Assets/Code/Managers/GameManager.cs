@@ -1,7 +1,5 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,11 +12,16 @@ public class GameManager : MonoBehaviour
 
     [Header("User Interface")]
     public TextMeshProUGUI displayKeyText;
+    public TextMeshProUGUI descriptionText;
+    public Button CloseButton;
     public Button createProfileButton;
-    public InputField nameInputField;
+    public Button SelectProfileButton;
+    public TMP_InputField nameInputField;
+    public List<GameObject> panels;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
+    public Button lessonButtonPrefab;
     [Space(10)]
     [Header("AudioManager")]
     public AudioSource voiceSource;
@@ -72,6 +75,11 @@ public class GameManager : MonoBehaviour
         return default(T);
     }
 
+    public void DisablePanel(GameObject panel) 
+    {
+        panel.SetActive(false);     
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
@@ -81,12 +89,19 @@ public class GameManager : MonoBehaviour
         }
 
         createProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().CreateProfileButton);
+        SelectProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().SelectLessonProfileButton);
+        CloseButton.onClick.AddListener(GameManager.GetManager<UIManager>().CloseAllPanels);
+
 
         GameManager.GetManager<SaveLoadManager>().LoadSave();
 
         autoSaveTimer = new Timer(0, "autosave");
         autoSaveTimer.SetTimer(2);
+
+       
     }
+
+    
 
 
     // Update is called once per frame

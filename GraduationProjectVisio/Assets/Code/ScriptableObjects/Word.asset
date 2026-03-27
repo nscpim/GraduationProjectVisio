@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9b1f166716889468e4d61a7a1d4dd4, type: 3}
-  m_Name: Lesson 1
+  m_Name: Word
   m_EditorClassIdentifier: Assembly-CSharp::LessonData
-  lessonName: Appel
+  lessonName: Word
   steps:
-  - instructionText: Combinatie 1
-    targetKey: 97
-    requiredKeys: 16010000
+  - instructionText: Typ de combinatie voor @
+    targetKey: 50
+    requiredKeys: 30010000
     instructionIfWrong: 
-  - instructionText: Combinatie 2
-    targetKey: 113
-    requiredKeys: 14010000
+  - instructionText: Selecteer Alles Combinatie
+    targetKey: 97
+    requiredKeys: 32010000
     instructionIfWrong: 
   - instructionText: Combinatie 3
-    targetKey: 0
-    requiredKeys: 0000000000000000
+    targetKey: 101
+    requiredKeys: 3201000034010000
     instructionIfWrong: 
   - instructionText: 
     targetKey: 0

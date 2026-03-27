@@ -19,17 +19,40 @@ public class LessonManager : Manager, IDataInterface
         UpdateUI();
     }
 
+    public void SetLesson(string name)
+    {
+        LessonData lesson = GetLesson(name);
+        currentLesson = lesson;
+        currentStepIndex = 0;
+        AnnounceCurrentStep();
+        UpdateUI();
+    }
+
+    public LessonData GetLesson(string name)
+    {
+        for (int i = 0; i < GameManager.instance.lessons.Count; i++)
+        {
+            if (GameManager.instance.lessons[i].name == name)
+            {
+                return GameManager.instance.lessons[i];
+            }
+        }
+        Debug.Log($"Lesson with name {name} could not be found");
+        return null;
+    }
+
 
     public void UpdateUI()
     {
         GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].targetKey, GameManager.instance.displayKeyText, Color.orange,
               currentLesson.steps[currentStepIndex].requiredKeys);
+        GameManager.GetManager<UIManager>().DisplayText(currentLesson.steps[currentStepIndex].instructionText, GameManager.instance.descriptionText, Color.green);
     }
 
     public void ReceiveInput(KeyCode key)
     {
         TypingStep step = currentLesson.steps[currentStepIndex];
-     
+
 
         if (key == step.targetKey)
         {
