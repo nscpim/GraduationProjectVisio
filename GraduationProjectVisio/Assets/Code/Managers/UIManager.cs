@@ -17,20 +17,19 @@ public class UIManager : Manager
         foreach (KeyCode key in combinationKeys)
         {
             string newKey = key.ToString();
-            Debug.Log(newKey + " Given String 1");
-            replacedString = newKey.Replace("Alpha", "");
-            p.Append(replacedString + " + ");
+            newKey = ReplaceString(newKey, "Alpha");
+            p.Append(newKey + " + ");
         }
         string newText = text.ToString();
-        Debug.Log(newText + " Given String 2");
-        if (newText.Contains("Alpha"))
-        {
-            Debug.Log("Contains alpha");
-            replacedString = newText.Replace("Alpha", "");
-        }
-        p.Append(" " + replacedString.ToString());
+        newText = ReplaceString(newText, "Alpha");
+        p.Append(" " + newText.ToString());
         textElement.text = string.Format("Toetsen Combinatie: {0}", p.ToString());
         textElement.color = color;
+    }
+
+    public string ReplaceString(string _string, string subStringToRemove, string replaceWith = "")
+    {
+        return replacedString = _string.Replace(subStringToRemove, replaceWith);
     }
 
     public void DisplayText(string text, TextMeshProUGUI textElement, Color color)
@@ -75,11 +74,18 @@ public class UIManager : Manager
                   Quaternion.identity, GetPanelByName("LessonSelectionPanel").transform);
 
             lessonButton.GetComponentInChildren<TextMeshProUGUI>().text = lesson.lessonName;
+            lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
         }
         lessonsFilled = true;
-
     }
 
+    o
+    public void SetupLesson(LessonData lesson)
+    {
+        CloseAllPanels();
+        GameManager.GetManager<LessonManager>().SetLesson(lesson.lessonName);
+        ToggleObject(GetPanelByName("InLessonPanel"), true);
+    }
 
 
     public void ClosePanelButtons()
