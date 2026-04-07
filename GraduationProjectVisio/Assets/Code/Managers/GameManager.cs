@@ -15,9 +15,17 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI descriptionText;
     public Button CloseButton;
     public Button createProfileButton;
+    public Button volumeUp;
+    public Button volumeDown;
+    public Button fontSizeUp;
+    public Button fontSizeDown;
+    public Button profile;
+    public Button magnifyGlass;
     public Button SelectProfileButton;
     public TMP_InputField nameInputField;
     public List<GameObject> panels;
+    public GameObject magnifyObject;
+    public List<TextMeshProUGUI> allTextComps;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
@@ -91,6 +99,11 @@ public class GameManager : MonoBehaviour
         createProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().CreateProfileButton);
         SelectProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().SelectLessonProfileButton);
         CloseButton.onClick.AddListener(GameManager.GetManager<UIManager>().CloseAllPanels);
+        magnifyGlass.onClick.AddListener(GameManager.GetManager<UIManager>().MagnifyToggle);
+        fontSizeUp.onClick.AddListener(GameManager.GetManager<UIManager>().FontSizeUp);
+        fontSizeDown.onClick.AddListener(GameManager.GetManager<UIManager>().FontSizeDown);
+        volumeDown.onClick.AddListener(GameManager.GetManager<AudioManager>().VolumeDown);
+        volumeUp.onClick.AddListener(GameManager.GetManager<AudioManager>().VolumeUp);
 
 
         GameManager.GetManager<SaveLoadManager>().LoadSave();
@@ -98,7 +111,10 @@ public class GameManager : MonoBehaviour
         autoSaveTimer = new Timer(0, "autosave");
         autoSaveTimer.SetTimer(2);
 
-       
+
+        allTextComps = FindAllTextComponents();
+
+        GameManager.GetManager<AudioManager>().AddAudioSource(feedbackSource);
     }
 
     
@@ -127,6 +143,12 @@ public class GameManager : MonoBehaviour
     {
         IEnumerable<IDataInterface> allSavedObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IDataInterface>();
         return new List<IDataInterface>(allSavedObjects);
+    }
+
+    public List<TextMeshProUGUI> FindAllTextComponents() 
+    {
+        IEnumerable<TextMeshProUGUI> allText = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<TextMeshProUGUI>();
+        return new List<TextMeshProUGUI>(allText);
     }
 
 

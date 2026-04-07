@@ -52,11 +52,40 @@ public class UIManager : Manager
 
     }
 
+    public void MagnifyToggle() 
+    {
+        if (GameManager.instance.magnifyObject.activeInHierarchy)
+        {
+            GameManager.instance.magnifyObject.SetActive(false);
+        }
+        else
+        {
+            GameManager.instance.magnifyObject.SetActive(true);
+        }
+    }
+
     public void CloseAllPanels()
     {
         for (int i = 0; i < GameManager.instance.panels.Count; i++)
         {
             GameManager.instance.panels[i].SetActive(false);
+        }
+    }
+
+
+    public void FontSizeUp() 
+    {
+        for (int i = 0; i < GameManager.instance.allTextComps.Count; i++)
+        {
+            GameManager.instance.allTextComps[i].fontSize += 2;
+        }
+    }
+
+    public void FontSizeDown() 
+    {
+        for (int i = 0; i < GameManager.instance.allTextComps.Count; i++)
+        {
+            GameManager.instance.allTextComps[i].fontSize -= 2;
         }
     }
 
@@ -76,10 +105,11 @@ public class UIManager : Manager
             lessonButton.GetComponentInChildren<TextMeshProUGUI>().text = lesson.lessonName;
             lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
         }
+        Debug.Log("Filled in all Lessons"); 
         lessonsFilled = true;
     }
 
-    o
+    
     public void SetupLesson(LessonData lesson)
     {
         CloseAllPanels();
