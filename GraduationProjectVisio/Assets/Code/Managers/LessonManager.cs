@@ -1,9 +1,10 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class LessonManager : Manager, IDataInterface
+public class LessonManager : Manager
 {
 
     public LessonData currentLesson;
@@ -87,7 +88,7 @@ public class LessonManager : Manager, IDataInterface
     {
         if (currentStepIndex >= currentLesson.steps.Count)
         {
-            CompleteLesson();
+            CompleteLesson(currentLesson.id);
             return;
         }
         GameManager.GetManager<AudioManager>().Speak(currentLesson.steps[currentStepIndex].instructionText);
@@ -95,19 +96,34 @@ public class LessonManager : Manager, IDataInterface
 
     }
 
-    private void CompleteLesson()
+    private void CompleteLesson(string lessonID)
     {
         GameManager.GetManager<AudioManager>().Speak("Les afgerond.");
 
-    }
+        var profile = GameManager.GetManager<SaveLoadManager>().currentProfile;
+        if (!profile.completedLessons.Contains(currentLesson.id))
+        {
+            profile.totalLessonsCompleted++;
+            profile.completedLessons.Add(currentLesson.id);
+        }
 
-    public void LoadData(SaveFile data)
-    {
-        this.currentLesson = data.lesson;
-    }
+        var progress = profile.lessonProgress.Find(l => l.lessonID == lessonID);
 
-    public void SaveData(ref SaveFile data)
-    {
-        data.lesson = this.currentLesson;
+        if (progress == null)
+        {
+            progress = new LessonProgress
+            {
+                lessonID = lessonID,
+                completed = true,
+                score = 100
+            };
+            profile.lessonProgress.Add(progress);
+        }
+        else
+        {
+            progress.completed = true;
+        }
+
+        GameManager.GetManager<SaveLoadManager>().SaveCurrentProfile();
     }
 }

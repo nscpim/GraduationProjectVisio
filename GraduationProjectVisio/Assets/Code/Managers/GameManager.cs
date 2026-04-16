@@ -26,20 +26,25 @@ public class GameManager : MonoBehaviour
     public List<GameObject> panels;
     public GameObject magnifyObject;
     public List<TextMeshProUGUI> allTextComps;
+    public Transform profilesContainer;
+    public GameObject profileItem;
+    public TextMeshProUGUI profileName;
+    public Button chooseProfileButton;
+    public Button lessonCreatorButton;
+    public Button saveLesson;
+    public Button addStep;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
     public Button lessonButtonPrefab;
     [Space(10)]
+    public Transform stepsContainer;
+    public TypingStepUI stepPrefab;
+    public TMPro.TMP_InputField lessonNameInput;
+    [Space(10)]
     [Header("AudioManager")]
     public AudioSource voiceSource;
     public AudioSource feedbackSource;
-    [Space(10)]
-    [Header("Save Load Manager")]
-    public List<ProfileData> profiles;
-    [SerializeField] private string fileName;
-    public string profileName;
-
     [Space(10)]
     [Header("Timers")]
     public List<Timer> timers = new List<Timer>();
@@ -61,7 +66,6 @@ public class GameManager : MonoBehaviour
          new SaveLoadManager(),
         };
     }
-
 
     public void Awake()
     {
@@ -104,9 +108,10 @@ public class GameManager : MonoBehaviour
         fontSizeDown.onClick.AddListener(GameManager.GetManager<UIManager>().FontSizeDown);
         volumeDown.onClick.AddListener(GameManager.GetManager<AudioManager>().VolumeDown);
         volumeUp.onClick.AddListener(GameManager.GetManager<AudioManager>().VolumeUp);
-
-
-        GameManager.GetManager<SaveLoadManager>().LoadSave();
+        chooseProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().RefreshProfileUI);
+        lessonCreatorButton.onClick.AddListener(GameManager.GetManager<UIManager>().StartCreatingLesson);
+        saveLesson.onClick.AddListener(GameManager.GetManager<UIManager>().SaveLesson);
+        addStep.onClick.AddListener(GameManager.GetManager<UIManager>().AddStep);
 
         autoSaveTimer = new Timer(0, "autosave");
         autoSaveTimer.SetTimer(2);
@@ -139,11 +144,11 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public List<IDataInterface> FindAllObjectsToSave()
-    {
-        IEnumerable<IDataInterface> allSavedObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IDataInterface>();
-        return new List<IDataInterface>(allSavedObjects);
-    }
+    //public List<IDataInterface> FindAllObjectsToSave()
+    //{
+    //    IEnumerable<IDataInterface> allSavedObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IDataInterface>();
+    //    return new List<IDataInterface>(allSavedObjects);
+    //}
 
     public List<TextMeshProUGUI> FindAllTextComponents() 
     {
@@ -163,5 +168,11 @@ public class GameManager : MonoBehaviour
         }
         Debug.LogError($"No Timer was found with name: {name}");
         return null;
+    }
+
+
+    public void CustomDestroyGameObject(GameObject gameObject) 
+    {
+        Destroy(gameObject);
     }
 }

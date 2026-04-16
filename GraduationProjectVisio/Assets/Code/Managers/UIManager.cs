@@ -11,6 +11,9 @@ public class UIManager : Manager
 {
     string replacedString;
     private bool lessonsFilled = false;
+
+    private List<TypingStepUI> stepUIs = new List<TypingStepUI>();
+
     public void DisplayUI(KeyCode text, TextMeshProUGUI textElement, Color color, List<KeyCode> combinationKeys)
     {
         StringBuilder p = new StringBuilder();
@@ -38,6 +41,8 @@ public class UIManager : Manager
         textElement.color = color;
     }
 
+
+
     public GameObject GetPanelByName(string name)
     {
         for (int i = 0; i < GameManager.instance.panels.Count; i++)
@@ -52,7 +57,7 @@ public class UIManager : Manager
 
     }
 
-    public void MagnifyToggle() 
+    public void MagnifyToggle()
     {
         if (GameManager.instance.magnifyObject.activeInHierarchy)
         {
@@ -73,7 +78,7 @@ public class UIManager : Manager
     }
 
 
-    public void FontSizeUp() 
+    public void FontSizeUp()
     {
         for (int i = 0; i < GameManager.instance.allTextComps.Count; i++)
         {
@@ -81,7 +86,7 @@ public class UIManager : Manager
         }
     }
 
-    public void FontSizeDown() 
+    public void FontSizeDown()
     {
         for (int i = 0; i < GameManager.instance.allTextComps.Count; i++)
         {
@@ -105,11 +110,11 @@ public class UIManager : Manager
             lessonButton.GetComponentInChildren<TextMeshProUGUI>().text = lesson.lessonName;
             lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
         }
-        Debug.Log("Filled in all Lessons"); 
+        Debug.Log("Filled in all Lessons");
         lessonsFilled = true;
     }
 
-    
+
     public void SetupLesson(LessonData lesson)
     {
         CloseAllPanels();
@@ -126,6 +131,7 @@ public class UIManager : Manager
 
     public void CreateProfileButton()
     {
+        OnCreateProfileClicked();
         ToggleObject(GetPanelByName("ProfilesPanel"), false);
     }
 
@@ -137,4 +143,110 @@ public class UIManager : Manager
             FillLessonUI();
         }
     }
+
+
+    #region Profile
+    public void RefreshProfileUI()
+    {
+        foreach (Transform item in GameManager.instance.profilesContainer)
+        {
+            GameManager.instance.CustomDestroyGameObject(item.gameObject);
+        }
+
+        List<string> profileIds = ProfileUtility.GetAllProfiles();
+
+        foreach (var item in profileIds)
+        {
+            PlayerProfile profile = ProfileSaveSystem.LoadProfile(item);
+
+            if (profile == null)
+            {
+                continue;
+            }
+
+            var profileItem = GameObject.Instantiate(GameManager.instance.profileItem, GameManager.instance.profilesContainer);
+
+            //Setup naming and stuff
+            profileItem.GetComponent<ProfileItemUI>().Setup(profile, OnProfileClicked);
+
+
+        }
+    }
+
+    public void OnProfileClicked(string profileId)
+    {
+        Debug.Log("Loading Profile" + profileId);
+        GameManager.GetManager<SaveLoadManager>().LoadProfile(profileId);
+        GameManager.instance.profileName.text = GameManager.GetManager<SaveLoadManager>().currentProfile.profileName;
+        CloseAllPanels();
+        ToggleObject(GetPanelByName("ProfilesPanel"), true);
+    }
+
+    public void OnCreateProfileClicked()
+    {
+        string playerName = GameManager.instance.nameInputField.text;
+
+        if (string.IsNullOrEmpty(playerName))
+        {
+            Debug.LogWarning("Enter a name first");
+            return;
+        }
+
+        GameManager.GetManager<SaveLoadManager>().CreateNewProfile(playerName);
+
+        RefreshProfileUI();
+    }
+    #endregion
+
+
+    #region Custom Lessons
+    public void StartCreatingLesson()
+    {
+        Debug.Log("Start creating lesson");
+
+        // Clear lesson name
+        GameManager.instance.lessonNameInput.text = "";
+
+        // Clear old steps
+        foreach (var step in stepUIs)
+        {
+           GameObject.Destroy(step.gameObject);
+        }
+        stepUIs.Clear();
+
+        // Optionally add 1 default step
+        AddStep();
+    }
+
+    public void AddStep()
+    {
+        var step = GameObject.Instantiate(GameManager.instance.stepPrefab, GameManager.instance.stepsContainer);
+        stepUIs.Add(step);
+    }
+
+    public void RemoveStep(TypingStepUI step)
+    {
+        stepUIs.Remove(step);
+        GameObject.Destroy(step.gameObject);
+    }
+
+    public void SaveLesson()
+    {
+        LessonSaveData lesson = new LessonSaveData();
+
+        lesson.id = System.Guid.NewGuid().ToString();
+        lesson.lessonName = GameManager.instance.lessonNameInput.text;
+
+        lesson.steps = new List<TypingStep>();
+
+        foreach (var stepUI in stepUIs)
+        {
+            lesson.steps.Add(stepUI.GetData());
+        }
+
+        LessonFileSystem.SaveLesson(lesson);
+
+        Debug.Log("Lesson saved with " + lesson.steps.Count + " steps!");
+    }
+    #endregion
 }

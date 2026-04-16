@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LessonData", menuName = "Scriptable Objects/LessonData")]
 public class LessonData : ScriptableObject
 {
+    public string id;
     public string lessonName;
     public List<TypingStep> steps;
 }

@@ -5,66 +5,36 @@ using System.Collections.Generic;
 
 public class SaveLoadManager : Manager
 {
-    private SaveFile saveData;
-    public List<IDataInterface> savedObjects;
+   public PlayerProfile currentProfile { get; private set; }
 
-
-    private WebFileHandler dataHandler;
-
-    public override void Start()
+    public void CreateNewProfile(string profileName) 
     {
-        this.savedObjects = GameManager.instance.FindAllObjectsToSave();
-       // this.dataHandler = new WebFileHandler(Application.persistentDataPath, GameManager.instance.fileName);
+        PlayerProfile profile = new PlayerProfile
+        {
+            profileID = System.Guid.NewGuid().ToString(),
+            profileName = profileName,
+            createdAt = System.DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+        };
+        currentProfile = profile;
+
+        ProfileSaveSystem.SaveProfile(profile);
     }
 
-    public void NewSave()
+    public void LoadProfile(string profileID) 
     {
-        this.saveData = new SaveFile();
+        currentProfile = ProfileSaveSystem.LoadProfile(profileID);
+
+        if (currentProfile != null)
+        {
+            SaveCurrentProfile();
+        }
+    
     }
 
-
-
-
-    public void LoadSave()
+    public void SaveCurrentProfile() 
     {
-      //  this.saveData = dataHandler.Load();
-
-
-        if (this.saveData == null)
-        {
-            Debug.Log("No save file found");
-            NewSave();
-        }
-
-        foreach (IDataInterface savedObject in savedObjects)
-        {
-            savedObject.LoadData(saveData);
-        }
-
-
+        ProfileSaveSystem.SaveProfile(currentProfile);
     }
 
 
-
-    public bool SaveData(string fileName, string jsonData)
-    {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        //idbfs is the webbrowsers storage
-        string path = Path.Combine("idbfs" + Application.productName + this.saveData.name);
-        if (!File.Exists(path))
-        {
-            Directory.CreateDirectory(path);
-        }
-        path = Path.Combine(path, fileName);
-#else
-#endif
-
-        foreach (IDataInterface savedObject in savedObjects)
-        {
-            savedObject.SaveData(ref saveData);
-        }
-
-        dataHandler.Save(saveData);
-        return false;
-    }
 }
