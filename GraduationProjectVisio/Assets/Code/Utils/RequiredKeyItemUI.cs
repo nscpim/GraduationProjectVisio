@@ -21,11 +21,29 @@ public class RequiredKeyItemUI : MonoBehaviour
 
         foreach (KeyCode key in Enum.GetValues(typeof(KeyCode)))
         {
-            options.Add(key.ToString());
+            if (isValidKey(key))
+            {
+                options.Add(key.ToString());
+            }
         }
 
         keyDropdown.AddOptions(options);
     }
+
+    bool isValidKey(KeyCode key)
+    {
+        string keyString = key.ToString();
+        if (key >= KeyCode.F13 && key <= KeyCode.F24)
+        {
+            return false;
+        }
+        if (keyString.Contains("Joy"))
+        {
+            return false;
+        }
+        return true;
+    }
+
 
     public KeyCode GetKey()
     {

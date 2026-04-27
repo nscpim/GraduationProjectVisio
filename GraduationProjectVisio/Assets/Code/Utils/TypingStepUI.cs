@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-
 public class TypingStepUI : MonoBehaviour
 {
     public TMP_InputField instructionInput;
@@ -47,6 +46,15 @@ public class TypingStepUI : MonoBehaviour
 
     bool isValidKey(KeyCode key)
     {
+        string keyString = key.ToString();
+        if (key >= KeyCode.F13 && key <= KeyCode.F24)
+        {
+            return false;
+        }
+        if (keyString.Contains("Joy"))
+        {
+            return false;
+        }
         return true;
     }
 

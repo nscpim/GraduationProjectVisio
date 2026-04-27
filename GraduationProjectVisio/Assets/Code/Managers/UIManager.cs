@@ -11,6 +11,7 @@ public class UIManager : Manager
 {
     string replacedString;
     private bool lessonsFilled = false;
+    private Transform lastTypingStep;
 
     private List<TypingStepUI> stepUIs = new List<TypingStepUI>();
 
@@ -221,7 +222,20 @@ public class UIManager : Manager
     public void AddStep()
     {
         var step = GameObject.Instantiate(GameManager.instance.stepPrefab, GameManager.instance.stepsContainer);
+        if (lastTypingStep != null)
+        {
+            ToggleObject(lastTypingStep.gameObject, false);
+            lastTypingStep = step.transform;
+        }
+        else
+        {
+            lastTypingStep = step.transform;
+        }
         stepUIs.Add(step);
+        for (int i = 0; i < stepUIs.Count; i++)
+        {
+            Debug.Log("Value of List Step UI: " + stepUIs[i].instructionInput.text);
+        }
     }
 
     public void RemoveStep(TypingStepUI step)
