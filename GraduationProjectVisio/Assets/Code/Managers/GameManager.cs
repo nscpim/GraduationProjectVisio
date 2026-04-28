@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public Button lessonCreatorButton;
     public Button saveLesson;
     public Button addStep;
+    public GameObject[] visualKeyboard;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
 
         managers = new Manager[]
         {
+         new VisualKeyboardManager(),
          new AudioManager(),
          new LessonManager(),
          new KeyboardInputManager(),

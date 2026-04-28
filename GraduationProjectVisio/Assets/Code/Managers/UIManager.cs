@@ -121,6 +121,10 @@ public class UIManager : Manager
         CloseAllPanels();
         GameManager.GetManager<LessonManager>().SetLesson(lesson.lessonName);
         ToggleObject(GetPanelByName("InLessonPanel"), true);
+        foreach (var item in GameManager.instance.visualKeyboard)
+        {
+            ToggleObject(item, true);
+        }
     }
 
 

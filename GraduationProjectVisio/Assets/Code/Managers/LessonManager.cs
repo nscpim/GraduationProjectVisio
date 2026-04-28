@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class LessonManager : Manager
 {
@@ -10,6 +11,8 @@ public class LessonManager : Manager
     public LessonData currentLesson;
 
     private int currentStepIndex = 0;
+
+    private Timer keyPressTimer = new Timer(1, "keyPressTimer");
 
 
     public void InitializeLesson(LessonData lesson)
@@ -42,12 +45,76 @@ public class LessonManager : Manager
         return null;
     }
 
+    public override void Update()
+    {
+        if (currentLesson != null)
+        {
+            bool isCorrect = true;
+
+            foreach (var key in currentLesson.steps[currentStepIndex].requiredKeys)
+            {
+                if (!Input.GetKey(key))
+                    isCorrect = false;
+            }
+
+            if (isCorrect)
+            {
+                foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
+                {
+                    if (Input.GetKey(pair.Key))
+                    {
+                        pair.Value.SetPressed();
+                    }
+                }
+            }
+            else
+            {
+                foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
+                {
+                    if (Input.GetKey(pair.Key))
+                    {
+                        pair.Value.SetIncorrect();
+                    }
+                }
+            }
+        }
+    }
 
     public void UpdateUI()
     {
         GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].targetKey, GameManager.instance.displayKeyText, Color.orange,
               currentLesson.steps[currentStepIndex].requiredKeys);
         GameManager.GetManager<UIManager>().DisplayText(currentLesson.steps[currentStepIndex].instructionText, GameManager.instance.descriptionText, Color.green);
+        ShowStep(currentLesson.steps[currentStepIndex]);
+    }
+
+    public void ShowStep(TypingStep step)
+    {
+        ResetAllKeys();
+
+        // Highlight required keys
+        foreach (var key in step.requiredKeys)
+        {
+            if (GameManager.GetManager<VisualKeyboardManager>().keyMap.ContainsKey(key))
+            {
+                GameManager.GetManager<VisualKeyboardManager>().keyMap[key].SetRequired();
+            }
+        }
+
+        // Highlight target key
+        if (GameManager.GetManager<VisualKeyboardManager>().keyMap.ContainsKey(step.targetKey))
+        {
+            GameManager.GetManager<VisualKeyboardManager>().keyMap[step.targetKey].SetRequired();
+        }
+        Debug.Log("Highlighted all keys");
+    }
+
+    public void ResetAllKeys()
+    {
+        foreach (var key in GameManager.GetManager<VisualKeyboardManager>().keyMap.Keys)
+        {
+            GameManager.GetManager<VisualKeyboardManager>().keyMap[key].SetNormal();
+        }
     }
 
     public void ReceiveInput(KeyCode key)
@@ -101,6 +168,11 @@ public class LessonManager : Manager
         GameManager.GetManager<AudioManager>().Speak("Les afgerond.");
 
         var profile = GameManager.GetManager<SaveLoadManager>().currentProfile;
+        if (profile == null)
+        {
+            return;
+        }
+
         if (!profile.completedLessons.Contains(currentLesson.id))
         {
             profile.totalLessonsCompleted++;
