@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9b1f166716889468e4d61a7a1d4dd4, type: 3}
   m_Name: Fusion
   m_EditorClassIdentifier: Assembly-CSharp::LessonData
+  id: 0
   lessonName: Fusion
   steps: []

@@ -10,6 +10,7 @@ public class KeyUI : MonoBehaviour
     public Color requiredColor = Color.yellow;
     public Color pressedColor = Color.green;
     public Color inCorrect = Color.red;
+    public Color neutralColor = Color.white;
 
     private void Awake()
     {
@@ -34,5 +35,9 @@ public class KeyUI : MonoBehaviour
     public void SetIncorrect()
     {
         image.color = inCorrect;
+    }
+    public void SetDefault()
+    {
+        image.color = neutralColor;
     }
 }

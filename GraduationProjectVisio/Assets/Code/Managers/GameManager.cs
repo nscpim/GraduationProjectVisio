@@ -114,12 +114,13 @@ public class GameManager : MonoBehaviour
         lessonCreatorButton.onClick.AddListener(GameManager.GetManager<UIManager>().StartCreatingLesson);
         saveLesson.onClick.AddListener(GameManager.GetManager<UIManager>().SaveLesson);
         addStep.onClick.AddListener(GameManager.GetManager<UIManager>().AddStep);
+        profile.onClick.AddListener(GameManager.GetManager<UIManager>().OpenProfilePanel);
 
         autoSaveTimer = new Timer(0, "autosave");
         autoSaveTimer.SetTimer(2);
 
 
-        allTextComps = FindAllTextComponents();
+       
 
         GameManager.GetManager<AudioManager>().AddAudioSource(feedbackSource);
     }
@@ -138,6 +139,7 @@ public class GameManager : MonoBehaviour
         {
             if (autoSaveTimer.isActive && autoSaveTimer.TimerDone())
             {
+                allTextComps = FindAllTextComponents();
                 // GetManager<SaveLoadManager>().SaveData();
                 Debug.Log("Auto Saved");
                 autoSaveTimer.RestartTimer();

@@ -76,6 +76,11 @@ public class UIManager : Manager
         {
             GameManager.instance.panels[i].SetActive(false);
         }
+        ToggleVisualKeyBoard(true);
+        foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
+        {
+            pair.Value.SetDefault();
+        }
     }
 
 
@@ -113,20 +118,25 @@ public class UIManager : Manager
         }
         Debug.Log("Filled in all Lessons");
         lessonsFilled = true;
+        ToggleVisualKeyBoard(false);
     }
 
 
     public void SetupLesson(LessonData lesson)
     {
+        ToggleVisualKeyBoard(true);
         CloseAllPanels();
         GameManager.GetManager<LessonManager>().SetLesson(lesson.lessonName);
         ToggleObject(GetPanelByName("InLessonPanel"), true);
-        foreach (var item in GameManager.instance.visualKeyboard)
-        {
-            ToggleObject(item, true);
-        }
     }
 
+    public void ToggleVisualKeyBoard(bool toggle)
+    {
+        foreach (var item in GameManager.instance.visualKeyboard)
+        {
+            ToggleObject(item, toggle);
+        }
+    }
 
     public void ClosePanelButtons()
     {
@@ -178,6 +188,15 @@ public class UIManager : Manager
         }
     }
 
+
+    public void OpenProfilePanel()
+    {
+        Debug.Log("OpenProfilePanel");
+        CloseAllPanels();
+        ToggleVisualKeyBoard(false);
+        ToggleObject(GetPanelByName("ProfilesPanel"), true);
+    }
+
     public void OnProfileClicked(string profileId)
     {
         Debug.Log("Loading Profile" + profileId);
@@ -207,6 +226,14 @@ public class UIManager : Manager
     #region Custom Lessons
     public void StartCreatingLesson()
     {
+        CloseAllPanels();
+        ToggleObject(GetPanelByName("LessonCreatorPanel"), true);
+        ToggleVisualKeyBoard(false);
+        PrepareLesson();
+    }
+
+    public void PrepareLesson()
+    {
         Debug.Log("Start creating lesson");
 
         // Clear lesson name
@@ -215,7 +242,7 @@ public class UIManager : Manager
         // Clear old steps
         foreach (var step in stepUIs)
         {
-           GameObject.Destroy(step.gameObject);
+            GameObject.Destroy(step.gameObject);
         }
         stepUIs.Clear();
 
