@@ -14,10 +14,19 @@ public class LessonManager : Manager
 
     private Timer keyPressTimer = new Timer(1, "keyPressTimer");
 
+    private Color combinationColor;
+    private Color descriptionColor;
+
+    public override void Start() 
+    {
+        ColorUtility.TryParseHtmlString("#FFD600", out combinationColor);
+        ColorUtility.TryParseHtmlString("#00AEEF", out descriptionColor);
+    }
 
     public void InitializeLesson(LessonData lesson)
     {
         currentLesson = lesson;
+        
         currentStepIndex = 0;
         AnnounceCurrentStep();
         UpdateUI();
@@ -47,44 +56,38 @@ public class LessonManager : Manager
 
     public override void Update()
     {
-        if (currentLesson != null)
+        if (currentLesson == null) return;
+
+        var step = currentLesson.steps[currentStepIndex];
+
+        bool requiredKeysHeld = true;
+
+        foreach (var key in step.requiredKeys)
         {
-            bool isCorrect = true;
-
-            foreach (var key in currentLesson.steps[currentStepIndex].requiredKeys)
+            if (!Input.GetKey(key)) 
             {
-                if (!Input.GetKey(key))
-                    isCorrect = false;
+                requiredKeysHeld = false;
+                break;
             }
+        }
 
-            if (isCorrect)
+        foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
+        {
+            if (Input.GetKey(pair.Key))
             {
-                foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
-                {
-                    if (Input.GetKey(pair.Key))
-                    {
-                        pair.Value.SetPressed();
-                    }
-                }
-            }
-            else
-            {
-                foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
-                {
-                    if (Input.GetKey(pair.Key))
-                    {
-                        pair.Value.SetIncorrect();
-                    }
-                }
+                if (requiredKeysHeld)
+                    pair.Value.SetPressed();   
+                else
+                    pair.Value.SetIncorrect(); 
             }
         }
     }
 
     public void UpdateUI()
     {
-        GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].targetKey, GameManager.instance.displayKeyText, Color.orange,
+        GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].targetKey, GameManager.instance.displayKeyText, combinationColor,
               currentLesson.steps[currentStepIndex].requiredKeys);
-        GameManager.GetManager<UIManager>().DisplayText(currentLesson.steps[currentStepIndex].instructionText, GameManager.instance.descriptionText, Color.green);
+        GameManager.GetManager<UIManager>().DisplayText(currentLesson.steps[currentStepIndex].instructionText, GameManager.instance.descriptionText,  descriptionColor);
         ShowStep(currentLesson.steps[currentStepIndex]);
     }
 

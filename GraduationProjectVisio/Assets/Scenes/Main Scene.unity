@@ -9090,6 +9090,22 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2565331679726199994, guid: eaa393e2f47e6924db15279da00906be, type: 2}
+    - target: {fileID: 5784723884823785534, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784723884823785534, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784723884823785534, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784723884823785534, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5922639024351482297, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 226
@@ -9131,9 +9147,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: eaa393e2f47e6924db15279da00906be, type: 2}
     - target: {fileID: 8095529045941335498, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095529045941335498, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2565331679726199994, guid: eaa393e2f47e6924db15279da00906be, type: 2}
+    - target: {fileID: 8095529045941335498, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: checkPaddingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095529045941335498, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_enableExtraPadding
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8785664657668658605, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontAsset
       value: 

@@ -27,3 +27,104 @@ MonoBehaviour:
     targetKey: 119
     requiredKeys: 15010000
     instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: ' Sneltoetsen van JAWS in een programma opvragen'
+    targetKey: 104
+    requiredKeys: 15010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Alles laten voorlezen
+    targetKey: 274
+    requiredKeys: 15010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Lees lettertype
+    targetKey: 102
+    requiredKeys: 15010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Uitgebreide lettertype informatie
+    targetKey: 53
+    requiredKeys: 15010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Tijdens typen woorden en/of
+      tekens voorlezen
+    targetKey: 50
+    requiredKeys: 15010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Navigatie toetsen aan/uit
+    targetKey: 122
+    requiredKeys: 15010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Taal kiezen
+    targetKey: 108
+    requiredKeys: 3201000037010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Per woord laten voorlezen
+    targetKey: 306
+    requiredKeys: 1401000013010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Tijd opvragen
+    targetKey: 277
+    requiredKeys: 25010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Snel tab lezen
+    targetKey: 306
+    requiredKeys: 3401000013010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Tabelmodus voor tabel lezen
+    targetKey: 277
+    requiredKeys: 2000000074000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Statusbalk voorlezen
+    targetKey: 277
+    requiredKeys: 19010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Titelbalk voorlezen (titel document)
+    targetKey: 277
+    requiredKeys: 74000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: JAWS Sneltoetsen voor spraak \n Spraak uit/aan
+    targetKey: 277
+    requiredKeys: 2000000073000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: De belangerijkste JAWS internet sneltoetsen \n Linklijst
+    targetKey: 277
+    requiredKeys: 20010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: De belangerijkste JAWS internet sneltoetsen \n Koppenlijst
+    targetKey: 277
+    requiredKeys: 1f010000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: De belangerijkste JAWS internet sneltoetsen \n Plaatsmarkering
+      maken
+    targetKey: 306
+    requiredKeys: 300100006b000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: Volledige lijst met letternavigatie  \n Invoegen van een Tijdelijke
+      Plaatsmarkering
+    targetKey: 306
+    requiredKeys: 370100006b000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: Volledige lijst met letternavigatie  \n Meld alle plaatsmarkeringen
+    targetKey: 308
+    requiredKeys: 370100006b000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: Volledige lijst met letternavigatie  \n Ga naar cel (in een
+      tabel)
+    targetKey: 306
+    requiredKeys: 370100006a000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: Volledige lijst met letternavigatie  \n Terug naar oorspronkelijke
+      tabelcel
+    targetKey: 306
+    requiredKeys: 300100006a000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: Volledige lijst met letternavigatie  \n Terug naar vorige regel
+    targetKey: 304
+    requiredKeys: 6a000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: Volledige lijst met letternavigatie  \n Stap voorbij element
+    targetKey: 304
+    requiredKeys: 2e000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
+  - instructionText: Volledige lijst met letternavigatie  \n Stap voor element
+    targetKey: 304
+    requiredKeys: 2c000000
+    instructionIfWrong: Dit was niet goed. Probeer het opnieuw
