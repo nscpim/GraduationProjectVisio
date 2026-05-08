@@ -51,6 +51,9 @@ public class GameManager : MonoBehaviour
     public List<Timer> timers = new List<Timer>();
     Timer autoSaveTimer;
 
+    /// <summary>
+    /// Constructor class to initalize managers and the instance.
+    /// </summary>
     GameManager()
     {
         if (instance == null)
@@ -69,6 +72,9 @@ public class GameManager : MonoBehaviour
         };
     }
 
+    /// <summary>
+    /// Calling Awake for all managers
+    /// </summary>
     public void Awake()
     {
         for (int i = 0; i < managers.Length; i++)
@@ -77,6 +83,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Getter method for getting a specific manager.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     public static T GetManager<T>() where T : Manager
     {
         for (int i = 0; i < managers.Length; i++)
@@ -89,11 +100,6 @@ public class GameManager : MonoBehaviour
         return default(T);
     }
 
-    public void DisablePanel(GameObject panel) 
-    {
-        panel.SetActive(false);     
-    }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
@@ -102,6 +108,7 @@ public class GameManager : MonoBehaviour
             managers[i].Start();
         }
 
+        //Find a way to make this more clean
         createProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().CreateProfileButton);
         SelectProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().SelectLessonProfileButton);
         CloseButton.onClick.AddListener(GameManager.GetManager<UIManager>().CloseAllPanels);
@@ -140,7 +147,6 @@ public class GameManager : MonoBehaviour
             if (autoSaveTimer.isActive && autoSaveTimer.TimerDone())
             {
                 allTextComps = FindAllTextComponents();
-                // GetManager<SaveLoadManager>().SaveData();
                 Debug.Log("Auto Saved");
                 autoSaveTimer.RestartTimer();
             }
@@ -174,7 +180,10 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-
+    /// <summary>
+    /// Destroy for non monobehaviour classes
+    /// </summary>
+    /// <param name="gameObject"></param>
     public void CustomDestroyGameObject(GameObject gameObject) 
     {
         Destroy(gameObject);

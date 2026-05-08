@@ -143,13 +143,18 @@ public class UIManager : Manager
         CloseAllPanels();
     }
 
-
+    /// <summary>
+    /// Exetutes when the create profile button is pressed
+    /// </summary>
     public void CreateProfileButton()
     {
         OnCreateProfileClicked();
         ToggleObject(GetPanelByName("ProfilesPanel"), false);
     }
 
+    /// <summary>
+    /// Executes when the select lesson button is pressed
+    /// </summary>
     public void SelectLessonProfileButton()
     {
         ToggleObject(GetPanelByName("LessonSelectionPanel"), true);
@@ -161,6 +166,9 @@ public class UIManager : Manager
 
 
     #region Profile
+    /// <summary>
+    /// Refreshed the profiles from disk and shows them in the UI
+    /// </summary>
     public void RefreshProfileUI()
     {
         foreach (Transform item in GameManager.instance.profilesContainer)
@@ -181,14 +189,14 @@ public class UIManager : Manager
 
             var profileItem = GameObject.Instantiate(GameManager.instance.profileItem, GameManager.instance.profilesContainer);
 
-            //Setup naming and stuff
+            //Setup naming and information
             profileItem.GetComponent<ProfileItemUI>().Setup(profile, OnProfileClicked);
-
-
         }
     }
 
-
+    /// <summary>
+    /// Opens the profile panel
+    /// </summary>
     public void OpenProfilePanel()
     {
         Debug.Log("OpenProfilePanel");
@@ -197,6 +205,10 @@ public class UIManager : Manager
         ToggleObject(GetPanelByName("ProfilesPanel"), true);
     }
 
+    /// <summary>
+    /// When a profile is clicked load that profile from disk,
+    /// </summary>
+    /// <param name="profileId"></param>
     public void OnProfileClicked(string profileId)
     {
         Debug.Log("Loading Profile" + profileId);
