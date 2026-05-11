@@ -67,6 +67,8 @@ public class TypingStepUI : MonoBehaviour
         }
     }
 
+    
+
     public TypingStep GetData()
     {
         TypingStep step = new TypingStep();

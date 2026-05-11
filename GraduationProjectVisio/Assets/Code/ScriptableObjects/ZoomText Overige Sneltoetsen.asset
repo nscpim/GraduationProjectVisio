@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9b1f166716889468e4d61a7a1d4dd4, type: 3}
+  m_Name: ZoomText Overige Sneltoetsen
+  m_EditorClassIdentifier: Assembly-CSharp::LessonData
+  id: 7
+  lessonName: ZoomText Overige Sneltoetsen
+  steps:
+  - instructionText: Muisaanwijzer accentuering
+    targetKey: 301
+    requiredKeys: 70000000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Cursor accentuering
+    targetKey: 301
+    requiredKeys: 72000000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Focus accentuering
+    targetKey: 301
+    requiredKeys: 66000000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Kies of je toetsen, woorden of helemaal niets uitgesproken wilt
+      hebben tijdens het invoeren van tekst
+    targetKey: 301
+    requiredKeys: 340100006b000000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Muis Echo spreekt automatisch de tekst onder de muisaanwijzer
+      uit
+    targetKey: 301
+    requiredKeys: 340100006d000000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.

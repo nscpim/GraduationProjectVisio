@@ -5,19 +5,19 @@ using System.Collections.Generic;
 
 public class SaveLoadManager : Manager
 {
-   public PlayerProfile currentProfile { get; private set; }
+    public PlayerProfile currentProfile { get; private set; }
 
     public List<LessonData> loadedLessons = new List<LessonData>();
 
     public override void Start()
     {
-        LoadAllLessons();
+        LoadAllLessons(false);
     }
 
-    public void LoadAllLessons() 
+    public void LoadAllLessons(bool reload)
     {
         loadedLessons.Clear();
-
+       
         var files = LessonFileSystem.GetAllLessonFiles();
 
         foreach (var file in files)
@@ -26,11 +26,21 @@ public class SaveLoadManager : Manager
             LessonSaveData data = JsonUtility.FromJson<LessonSaveData>(json);
             LessonData so = LessonConverter.ToScriptableObject(data);
             loadedLessons.Add(so);
+            
+        }
+        if (reload)
+        {
+            int runTimeLessons = GameManager.instance.lessons.Count - GameManager.instance.preBuildLessons;
+            if (runTimeLessons > 0)
+            {
+                GameManager.instance.lessons.RemoveRange(GameManager.instance.preBuildLessons, runTimeLessons);
+            }
         }
         GameManager.instance.lessons.AddRange(loadedLessons);
+
     }
 
-    public void CreateNewProfile(string profileName) 
+    public void CreateNewProfile(string profileName)
     {
         PlayerProfile profile = new PlayerProfile
         {
@@ -43,7 +53,7 @@ public class SaveLoadManager : Manager
         ProfileSaveSystem.SaveProfile(profile);
     }
 
-    public void LoadProfile(string profileID) 
+    public void LoadProfile(string profileID)
     {
         currentProfile = ProfileSaveSystem.LoadProfile(profileID);
 
@@ -51,10 +61,10 @@ public class SaveLoadManager : Manager
         {
             SaveCurrentProfile();
         }
-    
+
     }
 
-    public void SaveCurrentProfile() 
+    public void SaveCurrentProfile()
     {
         ProfileSaveSystem.SaveProfile(currentProfile);
     }

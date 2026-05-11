@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9b1f166716889468e4d61a7a1d4dd4, type: 3}
+  m_Name: ZoomText Vergroting
+  m_EditorClassIdentifier: Assembly-CSharp::LessonData
+  id: 5
+  lessonName: ZoomText Vergroting
+  steps:
+  - instructionText: Vergroten
+    targetKey: 301
+    requiredKeys: 11010000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Verkleinen
+    targetKey: 301
+    requiredKeys: 12010000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Vergroting aanpassen met Muiswiel
+    targetKey: 301
+    requiredKeys: 30010000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Naar boven schuiven
+    targetKey: 301
+    requiredKeys: 300100000d000000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Naar beneden schuiven
+    targetKey: 301
+    requiredKeys: 3001000012010000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Naar links schuiven
+    targetKey: 301
+    requiredKeys: 3001000014010000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Naar rechts schuiven
+    targetKey: 301
+    requiredKeys: 3001000013010000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Vergroting aan/uit
+    targetKey: 301
+    requiredKeys: 13010000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Kleuraccentueringen Aan/Uit
+    targetKey: 301
+    requiredKeys: 63000000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
+  - instructionText: Open de ZoomText werkbalk
+    targetKey: 301
+    requiredKeys: 3201000075000000
+    instructionIfWrong: Dat was niet juist. Probeer het opnieuw.

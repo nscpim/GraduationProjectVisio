@@ -9,6 +9,7 @@ public class LessonManager : Manager
 {
 
     public LessonData currentLesson;
+    private bool stepCompleted = false;
 
     private int currentStepIndex = 0;
 
@@ -18,7 +19,7 @@ public class LessonManager : Manager
     private Color descriptionColor;
     private Color newColor;
 
-    public override void Start() 
+    public override void Start()
     {
         ColorUtility.TryParseHtmlString("#FFD600", out combinationColor);
         ColorUtility.TryParseHtmlString("#00AEEF", out descriptionColor);
@@ -28,7 +29,7 @@ public class LessonManager : Manager
     public void InitializeLesson(LessonData lesson)
     {
         currentLesson = lesson;
-        
+
         currentStepIndex = 0;
         AnnounceCurrentStep();
         UpdateUI();
@@ -66,7 +67,7 @@ public class LessonManager : Manager
 
         foreach (var key in step.requiredKeys)
         {
-            if (!Input.GetKey(key)) 
+            if (!Input.GetKey(key))
             {
                 requiredKeysHeld = false;
                 break;
@@ -78,9 +79,9 @@ public class LessonManager : Manager
             if (Input.GetKey(pair.Key))
             {
                 if (requiredKeysHeld)
-                    pair.Value.SetPressed();   
+                    pair.Value.SetPressed();
                 else
-                    pair.Value.SetIncorrect(); 
+                    pair.Value.SetIncorrect();
             }
         }
     }
@@ -89,7 +90,7 @@ public class LessonManager : Manager
     {
         GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].targetKey, GameManager.instance.displayKeyText, newColor,
               currentLesson.steps[currentStepIndex].requiredKeys);
-        GameManager.GetManager<UIManager>().DisplayText(currentLesson.steps[currentStepIndex].instructionText, GameManager.instance.descriptionText,  descriptionColor);
+        GameManager.GetManager<UIManager>().DisplayText(currentLesson.steps[currentStepIndex].instructionText, GameManager.instance.descriptionText, descriptionColor);
         ShowStep(currentLesson.steps[currentStepIndex]);
     }
 
@@ -126,34 +127,38 @@ public class LessonManager : Manager
     {
         TypingStep step = currentLesson.steps[currentStepIndex];
 
-
-        if (key == step.targetKey)
+        bool allKeysHeld = true;
+        foreach (KeyCode requiredKey in step.requiredKeys)
         {
-            bool allKeysHeld = true;
-            foreach (KeyCode requiredKey in step.requiredKeys)
-            {
 
-                Debug.Log(requiredKey);
-                if (!Input.GetKey(requiredKey))
-                {
-                    allKeysHeld = false;
-                    break;
-                }
-            }
-            if (allKeysHeld)
+            Debug.Log(requiredKey);
+            if (!Input.GetKey(requiredKey))
             {
-                GameManager.GetManager<AudioManager>().PlayCorrect();
-                currentStepIndex++;
-                AnnounceCurrentStep();
-                UpdateUI();
+                allKeysHeld = false;
+                break;
             }
-            else
-            {
-                GameManager.GetManager<AudioManager>().PlayIncorrect();
-                return;
-            }
-
         }
+
+        if (key != step.targetKey)
+        {
+            allKeysHeld = false;
+        }
+
+        if (allKeysHeld && !stepCompleted)
+        {
+            stepCompleted = true;
+            GameManager.GetManager<AudioManager>().PlayCorrect();
+            currentStepIndex++;
+            AnnounceCurrentStep();
+            UpdateUI();
+        }
+        else
+        {
+            GameManager.GetManager<AudioManager>().PlayIncorrect();
+            return;
+        }
+
+
     }
 
     private void AnnounceCurrentStep()

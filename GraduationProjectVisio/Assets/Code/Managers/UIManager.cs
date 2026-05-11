@@ -10,10 +10,12 @@ using UnityEngine.UI;
 public class UIManager : Manager
 {
     string replacedString;
-    private bool lessonsFilled = false;
+
     private Transform lastTypingStep;
 
     private List<TypingStepUI> stepUIs = new List<TypingStepUI>();
+
+    private List<GameObject> lessonList = new List<GameObject>();
 
     /// <summary>
     /// Displays the combination text on the screen
@@ -137,6 +139,7 @@ public class UIManager : Manager
 
     public void FillLessonUI()
     {
+        ClearLessonList();
         foreach (LessonData lesson in GameManager.instance.lessons)
         {
             Button lessonButton = GameObject.Instantiate(GameManager.instance.lessonButtonPrefab,
@@ -145,12 +148,21 @@ public class UIManager : Manager
 
             lessonButton.GetComponentInChildren<TextMeshProUGUI>().text = lesson.lessonName;
             lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
+            lessonList.Add(lessonButton.gameObject);
         }
         Debug.Log("Filled in all Lessons");
-        lessonsFilled = true;
         ToggleVisualKeyBoard(false);
     }
 
+
+    public void ClearLessonList()
+    {
+        for (int i = 0; i < lessonList.Count; i++)
+        {
+            GameManager.instance.CustomDestroyGameObject(lessonList[i]);
+        }
+        lessonList.Clear();
+    }
 
     public void SetupLesson(LessonData lesson)
     {
@@ -188,10 +200,7 @@ public class UIManager : Manager
     public void SelectLessonProfileButton()
     {
         ToggleObject(GetPanelByName("LessonSelectionPanel"), true);
-        if (!lessonsFilled)
-        {
-            FillLessonUI();
-        }
+        FillLessonUI();
     }
 
 
@@ -308,10 +317,22 @@ public class UIManager : Manager
             lastTypingStep = step.transform;
         }
         stepUIs.Add(step);
+        foreach (Button item in step.GetComponentsInChildren<Button>())
+        {
+            if (item.name == "AddKeyButton")
+            {
+                item.onClick.AddListener(AddRequiredKey);
+            }
+        }
         for (int i = 0; i < stepUIs.Count; i++)
         {
             Debug.Log("Value of List Step UI: " + stepUIs[i].instructionInput.text);
         }
+    }
+
+    public void AddRequiredKey() 
+    {
+        var requiredKey = GameObject.Instantiate(GameManager.instance.requiredKey, lastTypingStep.GetComponent<TypingStepUI>().requiredKeysContainer);
     }
 
     public void RemoveStep(TypingStepUI step)
@@ -337,6 +358,9 @@ public class UIManager : Manager
         LessonFileSystem.SaveLesson(lesson);
 
         Debug.Log("Lesson saved with " + lesson.steps.Count + " steps!");
+
+        GameManager.GetManager<SaveLoadManager>().LoadAllLessons(true);
+
     }
     #endregion
 }

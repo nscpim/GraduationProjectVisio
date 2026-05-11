@@ -38,10 +38,12 @@ public class GameManager : MonoBehaviour
     [Header("LessonManager")]
     public List<LessonData> lessons;
     public Button lessonButtonPrefab;
+    public int preBuildLessons;
     [Space(10)]
     public Transform stepsContainer;
     public TypingStepUI stepPrefab;
     public TMPro.TMP_InputField lessonNameInput;
+    public RequiredKeyItemUI requiredKey;
     [Space(10)]
     [Header("AudioManager")]
     public AudioSource voiceSource;
@@ -70,6 +72,8 @@ public class GameManager : MonoBehaviour
          new UIManager(),
          new SaveLoadManager(),
         };
+
+       
     }
 
     /// <summary>
@@ -77,6 +81,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void Awake()
     {
+        preBuildLessons = lessons.Count;
         for (int i = 0; i < managers.Length; i++)
         {
             managers[i].Awake();
