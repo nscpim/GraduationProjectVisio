@@ -199,6 +199,7 @@ public class UIManager : Manager
     /// </summary>
     public void SelectLessonProfileButton()
     {
+        CloseAllPanels();
         ToggleObject(GetPanelByName("LessonSelectionPanel"), true);
         FillLessonUI();
     }
