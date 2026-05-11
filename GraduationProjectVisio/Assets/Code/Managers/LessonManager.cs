@@ -16,11 +16,13 @@ public class LessonManager : Manager
 
     private Color combinationColor;
     private Color descriptionColor;
+    private Color newColor;
 
     public override void Start() 
     {
         ColorUtility.TryParseHtmlString("#FFD600", out combinationColor);
         ColorUtility.TryParseHtmlString("#00AEEF", out descriptionColor);
+        ColorUtility.TryParseHtmlString("#000000", out newColor);
     }
 
     public void InitializeLesson(LessonData lesson)
@@ -85,7 +87,7 @@ public class LessonManager : Manager
 
     public void UpdateUI()
     {
-        GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].targetKey, GameManager.instance.displayKeyText, combinationColor,
+        GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].targetKey, GameManager.instance.displayKeyText, newColor,
               currentLesson.steps[currentStepIndex].requiredKeys);
         GameManager.GetManager<UIManager>().DisplayText(currentLesson.steps[currentStepIndex].instructionText, GameManager.instance.descriptionText,  descriptionColor);
         ShowStep(currentLesson.steps[currentStepIndex]);

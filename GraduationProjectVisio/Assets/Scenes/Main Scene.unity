@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 258
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 101
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 111
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 278
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 282
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 268
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 98
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 13
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -2134,7 +2134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 293
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -2229,7 +2229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 107
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -2324,7 +2324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 316
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -2419,7 +2419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 103
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -2609,7 +2609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 311
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -2704,7 +2704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 0
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -2799,7 +2799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 308
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -2989,7 +2989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 285
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -3084,7 +3084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 57
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -3179,7 +3179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 121
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -3380,7 +3380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 99
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -3592,7 +3592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 59
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -4206,7 +4206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 270
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -4301,7 +4301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 290
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -4633,7 +4633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 306
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -4855,7 +4855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 301
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -5045,7 +5045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 276
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -5793,7 +5793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 49
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -5888,7 +5888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 9
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -6310,7 +6310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 256
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -6405,7 +6405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 32
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -6500,7 +6500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 304
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -6595,7 +6595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 289
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -6690,7 +6690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 104
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -6902,7 +6902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 307
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -7192,7 +7192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 115
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -7298,7 +7298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 263
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -7393,7 +7393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 275
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -7583,7 +7583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 51
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -7689,7 +7689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 279
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -7879,7 +7879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 54
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -8074,7 +8074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 303
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -8264,7 +8264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 47
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -8454,7 +8454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 261
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -8644,7 +8644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 269
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -8929,7 +8929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 44
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -9024,7 +9024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 96
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -9453,7 +9453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 265
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -9810,7 +9810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 50
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -9905,7 +9905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 92
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -10095,7 +10095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 257
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -10190,7 +10190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 266
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -10285,7 +10285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 277
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -10380,7 +10380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 91
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -10752,7 +10752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 19
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -11037,7 +11037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 112
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -11132,7 +11132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 105
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -11702,7 +11702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 283
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -11797,7 +11797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 110
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -12126,7 +12126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 45
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -12221,7 +12221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 271
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -12517,7 +12517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 117
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -12612,7 +12612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 118
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -12897,7 +12897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 288
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -12992,7 +12992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 120
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -13087,7 +13087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 27
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -13277,7 +13277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 259
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -13573,7 +13573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 106
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -13858,7 +13858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 61
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -13953,7 +13953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 102
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -14528,7 +14528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 292
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -14686,7 +14686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.01886791, g: 0.017710915, b: 0.017710915, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14801,7 +14801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 8
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -14896,7 +14896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 302
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -15086,7 +15086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 260
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -15276,7 +15276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 114
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -15371,7 +15371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 122
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -15466,7 +15466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 48
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -16009,7 +16009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 287
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -16104,7 +16104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 291
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -16408,6 +16408,18 @@ PrefabInstance:
     - target: {fileID: 4088429653512197441, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253727181156703033, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.05882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253727181156703033, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253727181156703033, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4297998519999076677, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontAsset
@@ -16795,7 +16807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 100
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -16890,7 +16902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 286
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -17270,7 +17282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 116
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -17460,7 +17472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 119
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -17851,7 +17863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 108
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -17946,7 +17958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 284
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -18231,7 +18243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 319
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -18326,7 +18338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 305
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -18611,7 +18623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 52
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -19086,7 +19098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 53
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -19276,7 +19288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 274
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -19477,7 +19489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 300
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -19667,7 +19679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 267
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -19857,7 +19869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 93
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -20142,7 +20154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 264
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -20237,7 +20249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 113
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -20427,7 +20439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 281
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -20522,7 +20534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 273
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -20617,7 +20629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 127
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -20908,7 +20920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 56
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -21288,7 +21300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 97
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -21383,7 +21395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 262
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -21573,7 +21585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 280
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -21668,7 +21680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 46
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -21953,7 +21965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 109
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -22365,7 +22377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 55
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}
@@ -22460,7 +22472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyUI
   key: 39
   image: {fileID: 0}
-  normalColor: {r: 1, g: 0.83921576, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   requiredColor: {r: 0, g: 0.68235296, b: 0.93725497, a: 1}
   pressedColor: {r: 0, g: 0.7843138, b: 0.3254902, a: 1}
   inCorrect: {r: 1, g: 0.23137257, b: 0.18823531, a: 1}

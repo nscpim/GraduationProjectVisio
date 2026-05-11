@@ -15,6 +15,13 @@ public class UIManager : Manager
 
     private List<TypingStepUI> stepUIs = new List<TypingStepUI>();
 
+    /// <summary>
+    /// Displays the combination text on the screen
+    /// </summary>
+    /// <param name="text"></param>
+    /// <param name="textElement"></param>
+    /// <param name="color"></param>
+    /// <param name="combinationKeys"></param>
     public void DisplayUI(KeyCode text, TextMeshProUGUI textElement, Color color, List<KeyCode> combinationKeys)
     {
         StringBuilder p = new StringBuilder();
@@ -30,12 +37,24 @@ public class UIManager : Manager
         textElement.text = string.Format("Toetsen Combinatie: {0}", p.ToString());
         textElement.color = color;
     }
-
+    /// <summary>
+    /// String replacer that replaces any string to whatever is needed and defaults to ""
+    /// </summary>
+    /// <param name="_string"></param>
+    /// <param name="subStringToRemove"></param>
+    /// <param name="replaceWith"></param>
+    /// <returns></returns>
     public string ReplaceString(string _string, string subStringToRemove, string replaceWith = "")
     {
         return replacedString = _string.Replace(subStringToRemove, replaceWith);
     }
 
+    /// <summary>
+    /// Displays simple text in a text component
+    /// </summary>
+    /// <param name="text"></param>
+    /// <param name="textElement"></param>
+    /// <param name="color"></param>
     public void DisplayText(string text, TextMeshProUGUI textElement, Color color)
     {
         textElement.text = text;
@@ -43,7 +62,11 @@ public class UIManager : Manager
     }
 
 
-
+    /// <summary>
+    /// Gets a panel by name, returning a gameobject
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public GameObject GetPanelByName(string name)
     {
         for (int i = 0; i < GameManager.instance.panels.Count; i++)
@@ -58,6 +81,10 @@ public class UIManager : Manager
 
     }
 
+
+    /// <summary>
+    /// Enabled or disables the magnifying glass
+    /// </summary>
     public void MagnifyToggle()
     {
         if (GameManager.instance.magnifyObject.activeInHierarchy)
@@ -70,6 +97,9 @@ public class UIManager : Manager
         }
     }
 
+    /// <summary>
+    /// Closes all open panels
+    /// </summary>
     public void CloseAllPanels()
     {
         for (int i = 0; i < GameManager.instance.panels.Count; i++)
@@ -258,10 +288,13 @@ public class UIManager : Manager
         }
         stepUIs.Clear();
 
-        // Optionally add 1 default step
+        // Add a default step
         AddStep();
     }
 
+    /// <summary>
+    /// Adds a step when clicked on the add step button
+    /// </summary>
     public void AddStep()
     {
         var step = GameObject.Instantiate(GameManager.instance.stepPrefab, GameManager.instance.stepsContainer);
