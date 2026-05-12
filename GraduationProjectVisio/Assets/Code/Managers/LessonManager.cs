@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -19,6 +20,8 @@ public class LessonManager : Manager
     private Color descriptionColor;
     private Color newColor;
 
+    private Dictionary<KeyCode, float> keyPressTimes =
+    new Dictionary<KeyCode, float>();
     public override void Start()
     {
         ColorUtility.TryParseHtmlString("#FFD600", out combinationColor);
@@ -59,6 +62,7 @@ public class LessonManager : Manager
 
     public override void Update()
     {
+        ReceiveInput();
         if (currentLesson == null) return;
 
         var step = currentLesson.steps[currentStepIndex];
@@ -84,6 +88,16 @@ public class LessonManager : Manager
                     pair.Value.SetIncorrect();
             }
         }
+
+        foreach (KeyCode key in Enum.GetValues(typeof(KeyCode)))
+        {
+            if (Input.GetKeyDown(key))
+            {
+                keyPressTimes[key] = Time.time;
+            }
+        }
+
+
     }
 
     public void UpdateUI()
@@ -123,42 +137,53 @@ public class LessonManager : Manager
         }
     }
 
-    public void ReceiveInput(KeyCode key)
+    public void ReceiveInput()
     {
+        if (currentLesson == null) return;
+
+        if (stepCompleted) return;
+
         TypingStep step = currentLesson.steps[currentStepIndex];
 
-        bool allKeysHeld = true;
-        foreach (KeyCode requiredKey in step.requiredKeys)
-        {
+        // Check if all required keys are currently held
+        bool requiredHeld = true;
 
-            Debug.Log(requiredKey);
-            if (!Input.GetKey(requiredKey))
+        foreach (KeyCode key in step.requiredKeys)
+        {
+            if (!Input.GetKey(key))
             {
-                allKeysHeld = false;
+                requiredHeld = false;
                 break;
             }
         }
 
-        if (key != step.targetKey)
-        {
-            allKeysHeld = false;
-        }
-
-        if (allKeysHeld && !stepCompleted)
+        // Check if target key was pressed
+        if (requiredHeld && Input.GetKeyDown(step.targetKey))
         {
             stepCompleted = true;
+
             GameManager.GetManager<AudioManager>().PlayCorrect();
+
             currentStepIndex++;
-            AnnounceCurrentStep();
-            UpdateUI();
-        }
-        else
-        {
-            GameManager.GetManager<AudioManager>().PlayIncorrect();
-            return;
-        }
 
+            if (currentStepIndex < currentLesson.steps.Count)
+            {
+                PrepareNextStep();
+            }
+            else
+            {
+                Debug.Log("Lesson Complete!");
+            }
+        }
+    }
+    private async void PrepareNextStep()
+    {
+        await Task.Delay(50);
+        stepCompleted = false;
 
+        AnnounceCurrentStep();
+
+        UpdateUI();
     }
 
     private void AnnounceCurrentStep()

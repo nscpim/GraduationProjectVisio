@@ -29,7 +29,7 @@ public class KeyboardInputManager : Manager
                     if (GameManager.GetManager<LessonManager>().currentLesson)
                     {
                         LessonManager lesson = GameManager.GetManager<LessonManager>();
-                        lesson.ReceiveInput(key);
+                        lesson.ReceiveInput();
                     }
                 }
             }
