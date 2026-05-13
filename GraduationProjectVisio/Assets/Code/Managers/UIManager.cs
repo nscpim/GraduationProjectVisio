@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
@@ -36,10 +36,10 @@ public class UIManager : Manager
         string newText = text.ToString();
         newText = ReplaceString(newText, "Alpha");
         newText = ReplaceString(newText, "Return", "Enter");
-        newText = ReplaceString(newText, "LeftArrow", "Pijltje naar links");
-        newText = ReplaceString(newText, "RightArrow", "Pijltje naar rechts");
-        newText = ReplaceString(newText, "UpArrow", "Pijltje naar boven");
-        newText = ReplaceString(newText, "DownArrow", "Pijltje naar onder");
+        newText = ReplaceString(newText, "LeftArrow", "Pijltje Links");
+        newText = ReplaceString(newText, "RightArrow", "Pijltje Rechts");
+        newText = ReplaceString(newText, "UpArrow", "Pijltje Boven");
+        newText = ReplaceString(newText, "DownArrow", "Pijltje Onder");
         p.Append(newText.ToString() + " + ");
 
 
@@ -48,10 +48,10 @@ public class UIManager : Manager
             string newKey = combinationKeys[i].ToString();
             newKey = ReplaceString(newKey, "Alpha");
             newKey = ReplaceString(newKey, "Return", "Enter");
-            newKey = ReplaceString(newKey, "LeftArrow", "Pijltje naar links");
-            newKey = ReplaceString(newKey, "RightArrow", "Pijltje naar rechts");
-            newKey = ReplaceString(newKey, "UpArrow", "Pijltje naar boven");
-            newKey = ReplaceString(newKey, "DownArrow", "Pijltje naar onder");
+            newKey = ReplaceString(newKey, "LeftArrow", "Pijltje Links");
+            newKey = ReplaceString(newKey, "RightArrow", "Pijltje Rechts");
+            newKey = ReplaceString(newKey, "UpArrow", "Pijltje Boven");
+            newKey = ReplaceString(newKey, "DownArrow", "Pijltje Onder");
             if (i == combinationKeys.Count - 1)
             {
                 p.Append(newKey);
@@ -61,7 +61,7 @@ public class UIManager : Manager
                 p.Append(newKey + " + ");
             }
         }
-        textElement.text = string.Format("Toetsen Combinatie: {0}", p.ToString());
+        textElement.text = string.Format(p.ToString());
         textElement.color = color;
     }
     /// <summary>

@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
          new KeyboardInputManager(),
          new UIManager(),
          new SaveLoadManager(),
+         new AndroidTTS(),
         };
 
 
