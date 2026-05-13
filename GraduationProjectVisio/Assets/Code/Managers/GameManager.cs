@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -52,6 +53,9 @@ public class GameManager : MonoBehaviour
     [Header("Timers")]
     public List<Timer> timers = new List<Timer>();
     Timer autoSaveTimer;
+    [Space(10)]
+    [Header("Event Manager")]
+    public EventSystem eventSystem;
 
     /// <summary>
     /// Constructor class to initalize managers and the instance.
@@ -73,7 +77,7 @@ public class GameManager : MonoBehaviour
          new SaveLoadManager(),
         };
 
-       
+
     }
 
     /// <summary>
@@ -132,12 +136,12 @@ public class GameManager : MonoBehaviour
         autoSaveTimer.SetTimer(2);
 
 
-       
+
 
         GameManager.GetManager<AudioManager>().AddAudioSource(feedbackSource);
     }
 
-    
+
 
 
     // Update is called once per frame
@@ -165,7 +169,7 @@ public class GameManager : MonoBehaviour
     //    return new List<IDataInterface>(allSavedObjects);
     //}
 
-    public List<TextMeshProUGUI> FindAllTextComponents() 
+    public List<TextMeshProUGUI> FindAllTextComponents()
     {
         IEnumerable<TextMeshProUGUI> allText = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<TextMeshProUGUI>();
         return new List<TextMeshProUGUI>(allText);
@@ -189,7 +193,7 @@ public class GameManager : MonoBehaviour
     /// Destroy for non monobehaviour classes
     /// </summary>
     /// <param name="gameObject"></param>
-    public void CustomDestroyGameObject(GameObject gameObject) 
+    public void CustomDestroyGameObject(GameObject gameObject)
     {
         Destroy(gameObject);
     }

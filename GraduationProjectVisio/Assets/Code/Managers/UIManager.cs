@@ -1,10 +1,7 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using System.Collections.Generic;
 using System.Text;
-using System;
-using Unity.VisualScripting;
 using UnityEngine.UI;
 
 public class UIManager : Manager
@@ -17,6 +14,14 @@ public class UIManager : Manager
 
     private List<GameObject> lessonList = new List<GameObject>();
 
+    private Color highlightColor;
+
+
+    public override void Start()
+    {
+        ColorUtility.TryParseHtmlString("#4FB6AC", out highlightColor);
+    }
+
     /// <summary>
     /// Displays the combination text on the screen
     /// </summary>
@@ -27,15 +32,35 @@ public class UIManager : Manager
     public void DisplayUI(KeyCode text, TextMeshProUGUI textElement, Color color, List<KeyCode> combinationKeys)
     {
         StringBuilder p = new StringBuilder();
-        foreach (KeyCode key in combinationKeys)
-        {
-            string newKey = key.ToString();
-            newKey = ReplaceString(newKey, "Alpha");
-            p.Append(newKey + " + ");
-        }
+
         string newText = text.ToString();
         newText = ReplaceString(newText, "Alpha");
-        p.Append(" " + newText.ToString());
+        newText = ReplaceString(newText, "Return", "Enter");
+        newText = ReplaceString(newText, "LeftArrow", "Pijltje naar links");
+        newText = ReplaceString(newText, "RightArrow", "Pijltje naar rechts");
+        newText = ReplaceString(newText, "UpArrow", "Pijltje naar boven");
+        newText = ReplaceString(newText, "DownArrow", "Pijltje naar onder");
+        p.Append(newText.ToString() + " + ");
+
+
+        for (int i = 0; i < combinationKeys.Count; i++)
+        {
+            string newKey = combinationKeys[i].ToString();
+            newKey = ReplaceString(newKey, "Alpha");
+            newKey = ReplaceString(newKey, "Return", "Enter");
+            newKey = ReplaceString(newKey, "LeftArrow", "Pijltje naar links");
+            newKey = ReplaceString(newKey, "RightArrow", "Pijltje naar rechts");
+            newKey = ReplaceString(newKey, "UpArrow", "Pijltje naar boven");
+            newKey = ReplaceString(newKey, "DownArrow", "Pijltje naar onder");
+            if (i == combinationKeys.Count - 1)
+            {
+                p.Append(newKey);
+            }
+            else
+            {
+                p.Append(newKey + " + ");
+            }
+        }
         textElement.text = string.Format("Toetsen Combinatie: {0}", p.ToString());
         textElement.color = color;
     }
@@ -104,10 +129,12 @@ public class UIManager : Manager
     /// </summary>
     public void CloseAllPanels()
     {
+        GameManager.GetManager<LessonManager>().currentLesson = null;
         for (int i = 0; i < GameManager.instance.panels.Count; i++)
         {
             GameManager.instance.panels[i].SetActive(false);
         }
+  
         ToggleVisualKeyBoard(true);
         foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
         {
@@ -148,6 +175,9 @@ public class UIManager : Manager
 
             lessonButton.GetComponentInChildren<TextMeshProUGUI>().text = lesson.lessonName;
             lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
+            ColorBlock color = lessonButton.colors;
+            color.selectedColor = highlightColor;
+            lessonButton.colors = color;
             lessonList.Add(lessonButton.gameObject);
         }
         Debug.Log("Filled in all Lessons");
@@ -182,6 +212,7 @@ public class UIManager : Manager
 
     public void ClosePanelButtons()
     {
+        GameManager.instance.SelectProfileButton.Select();
         CloseAllPanels();
     }
 
@@ -331,7 +362,7 @@ public class UIManager : Manager
         }
     }
 
-    public void AddRequiredKey() 
+    public void AddRequiredKey()
     {
         var requiredKey = GameObject.Instantiate(GameManager.instance.requiredKey, lastTypingStep.GetComponent<TypingStepUI>().requiredKeysContainer);
     }

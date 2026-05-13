@@ -45,7 +45,7 @@ MonoBehaviour:
     instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
   - instructionText: Vergroting aan/uit
     targetKey: 301
-    requiredKeys: 13010000
+    requiredKeys: 0d000000
     instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
   - instructionText: Kleuraccentueringen Aan/Uit
     targetKey: 301

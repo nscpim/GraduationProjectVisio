@@ -8,7 +8,6 @@ using UnityEngine.Rendering;
 
 public class LessonManager : Manager
 {
-
     public LessonData currentLesson;
     private bool stepCompleted = false;
 
@@ -20,13 +19,13 @@ public class LessonManager : Manager
     private Color descriptionColor;
     private Color newColor;
 
-    private Dictionary<KeyCode, float> keyPressTimes =
-    new Dictionary<KeyCode, float>();
+
     public override void Start()
     {
         ColorUtility.TryParseHtmlString("#FFD600", out combinationColor);
         ColorUtility.TryParseHtmlString("#00AEEF", out descriptionColor);
         ColorUtility.TryParseHtmlString("#000000", out newColor);
+
     }
 
     public void InitializeLesson(LessonData lesson)
@@ -63,43 +62,50 @@ public class LessonManager : Manager
     public override void Update()
     {
         ReceiveInput();
-        if (currentLesson == null) return;
-
-        var step = currentLesson.steps[currentStepIndex];
-
-        bool requiredKeysHeld = true;
-
-        foreach (var key in step.requiredKeys)
+        if (currentLesson != null)
         {
-            if (!Input.GetKey(key))
+            TypingStep step; 
+            try
             {
-                requiredKeysHeld = false;
-                break;
+                step = currentLesson.steps[currentStepIndex];
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Debug.Log(e.Message);
+                throw;
+            }
+
+            // Create valid key set adding the main key
+            HashSet<KeyCode> validKeys = new HashSet<KeyCode>
+        {
+            step.targetKey
+        };
+
+            //Adding all additional keys
+            foreach (var key in step.requiredKeys)
+            {
+                validKeys.Add(key);
+            }
+
+            // Check all keyboard keys
+            foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
+            {
+                if (Input.GetKey(pair.Key))
+                {
+                    // Correct combo key
+                    if (validKeys.Contains(pair.Key))
+                    {
+                        pair.Value.SetPressed();
+                    }
+                    // Wrong key
+                    else
+                    {
+                        pair.Value.SetIncorrect();
+                    }
+                }
             }
         }
-
-        foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
-        {
-            if (Input.GetKey(pair.Key))
-            {
-                if (requiredKeysHeld)
-                    pair.Value.SetPressed();
-                else
-                    pair.Value.SetIncorrect();
-            }
-        }
-
-        foreach (KeyCode key in Enum.GetValues(typeof(KeyCode)))
-        {
-            if (Input.GetKeyDown(key))
-            {
-                keyPressTimes[key] = Time.time;
-            }
-        }
-
-
     }
-
     public void UpdateUI()
     {
         GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].targetKey, GameManager.instance.displayKeyText, newColor,
@@ -139,40 +145,40 @@ public class LessonManager : Manager
 
     public void ReceiveInput()
     {
-        if (currentLesson == null) return;
-
-        if (stepCompleted) return;
-
-        TypingStep step = currentLesson.steps[currentStepIndex];
-
-        // Check if all required keys are currently held
-        bool requiredHeld = true;
-
-        foreach (KeyCode key in step.requiredKeys)
+        if (currentLesson != null)
         {
-            if (!Input.GetKey(key))
+            Debug.Log(currentLesson.lessonName);
+            if (stepCompleted) return;
+
+            TypingStep step = currentLesson.steps[currentStepIndex];
+
+            bool allKeysPressed = true;
+
+            // Required keys
+            foreach (KeyCode key in step.requiredKeys)
             {
-                requiredHeld = false;
-                break;
+                if (!Input.GetKey(key))
+                {
+                    allKeysPressed = false;
+                    break;
+                }
             }
-        }
 
-        // Check if target key was pressed
-        if (requiredHeld && Input.GetKeyDown(step.targetKey))
-        {
-            stepCompleted = true;
-
-            GameManager.GetManager<AudioManager>().PlayCorrect();
-
-            currentStepIndex++;
-
-            if (currentStepIndex < currentLesson.steps.Count)
+            // Target key
+            if (!Input.GetKey(step.targetKey))
             {
+                allKeysPressed = false;
+            }
+
+            // Success
+            if (allKeysPressed)
+            {
+                stepCompleted = true;
+
+                GameManager.GetManager<AudioManager>().PlayCorrect();
+                currentStepIndex++;
                 PrepareNextStep();
-            }
-            else
-            {
-                Debug.Log("Lesson Complete!");
+
             }
         }
     }
@@ -182,8 +188,10 @@ public class LessonManager : Manager
         stepCompleted = false;
 
         AnnounceCurrentStep();
-
-        UpdateUI();
+        if (currentLesson != null)
+        {
+            UpdateUI();
+        }
     }
 
     private void AnnounceCurrentStep()
@@ -205,6 +213,8 @@ public class LessonManager : Manager
         var profile = GameManager.GetManager<SaveLoadManager>().currentProfile;
         if (profile == null)
         {
+            GameManager.instance.SelectProfileButton.Select();
+            GameManager.GetManager<UIManager>().CloseAllPanels();
             return;
         }
 
@@ -230,7 +240,10 @@ public class LessonManager : Manager
         {
             progress.completed = true;
         }
-
+        GameManager.instance.SelectProfileButton.Select();
+        Debug.LogWarning("Completed the lesson");
         GameManager.GetManager<SaveLoadManager>().SaveCurrentProfile();
+        GameManager.GetManager<UIManager>().CloseAllPanels();
+
     }
 }
