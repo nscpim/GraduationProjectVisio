@@ -17,19 +17,20 @@ public class AudioManager : Manager
 
     public void Speak(string text)
     {
-        //TTS code
+        if (GameManager.GetManager<AndroidTTS>().tts != null)
+        {
+            GameManager.GetManager<AndroidTTS>().Speak(text);
+        }
     }
 
-    public void PlayCorrect()
+    public void PlayCorrect(string message)
     {
-        // feedbackSource.PlayOneShot()
-        Debug.Log("Correct");
+        Speak(message);
     }
 
-    public void PlayIncorrect()
+    public void PlayIncorrect(string message)
     {
-        //   feedbackSource.PlayOneShot()
-        Debug.Log("Incorrect");
+        Speak(message);
     }
 
     public void VolumeUp()

@@ -63,6 +63,8 @@ public class UIManager : Manager
         }
         textElement.text = string.Format(p.ToString());
         textElement.color = color;
+
+        GameManager.GetManager<AudioManager>().Speak(p.ToString());
     }
     /// <summary>
     /// String replacer that replaces any string to whatever is needed and defaults to ""

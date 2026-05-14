@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Xml;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -18,6 +19,13 @@ public class LessonManager : Manager
     private Color combinationColor;
     private Color descriptionColor;
     private Color newColor;
+
+    private List<String> correctAnswer = new List<string>
+    {
+        "Goed gedaan!",
+        "Ga zo door!",
+        "Geweldig",
+    };
 
 
     public override void Start()
@@ -174,8 +182,8 @@ public class LessonManager : Manager
             if (allKeysPressed)
             {
                 stepCompleted = true;
-
-                GameManager.GetManager<AudioManager>().PlayCorrect();
+                int correctStringIndex = UnityEngine.Random.Range(0, correctAnswer.Count);
+                GameManager.GetManager<AudioManager>().PlayCorrect(correctAnswer[correctStringIndex]);
                 currentStepIndex++;
                 PrepareNextStep();
 
