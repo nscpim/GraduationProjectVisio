@@ -17,10 +17,11 @@ public class AudioManager : Manager
 
     public void Speak(string text)
     {
-        if (GameManager.GetManager<AndroidTTS>().tts != null)
+        if (GameManager.GetManager<AndroidTTS>() == null)
         {
-            GameManager.GetManager<AndroidTTS>().Speak(text);
+            return;
         }
+            GameManager.GetManager<AndroidTTS>().Speak(text);
     }
 
     public void PlayCorrect(string message)
