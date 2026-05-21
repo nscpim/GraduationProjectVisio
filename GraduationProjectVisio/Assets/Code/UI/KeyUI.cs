@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class KeyUI : MonoBehaviour
 {
+    //Key Prefab for the visual keyboard
+
     public KeyCode key;
     public Image image;
 

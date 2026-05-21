@@ -4,6 +4,10 @@ using System.Collections.Generic;
 
 public static class ProfileUtility
 {
+    /// <summary>
+    /// Gets all profiles from disk
+    /// </summary>
+    /// <returns></returns>
     public static List<string> GetAllProfiles() 
     {
         string folder = Path.Combine(Application.persistentDataPath, "Profiles");

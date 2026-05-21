@@ -8,9 +8,11 @@ public class AndroidTTS : Manager
 
     public override void Start()
     {
+        //Check if the application runs in an android container
         if (Application.platform != RuntimePlatform.Android)
             return;
 
+        //Try to get the text to speech Java object
         try
         {
             AndroidJavaClass unityPlayer =
@@ -33,6 +35,10 @@ public class AndroidTTS : Manager
         }
     }
 
+    /// <summary>
+    /// Initalizes the Text-to-speech and changes the voice language to dutch
+    /// Async task to give it time to get the java object, this process can take some time
+    /// </summary>
     private async void InitializeTTS()
     {
         await Task.Delay(2000);
@@ -56,6 +62,10 @@ public class AndroidTTS : Manager
         }
     }
 
+    /// <summary>
+    /// Lets the Text-to-speech voice speak with a certain text
+    /// </summary>
+    /// <param name="text"></param>
     public void Speak(string text)
     {
         if (!initialized || tts == null)
@@ -71,14 +81,6 @@ public class AndroidTTS : Manager
         catch (System.Exception e)
         {
             Debug.LogError("Speak Error: " + e.Message);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (tts != null)
-        {
-            tts.Call("shutdown");
         }
     }
 }

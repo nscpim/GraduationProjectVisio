@@ -9,11 +9,19 @@ public class SaveLoadManager : Manager
 
     public List<LessonData> loadedLessons = new List<LessonData>();
 
+    /// <summary>
+    /// Executed at the start of the application.
+    /// </summary>
     public override void Start()
     {
         LoadAllLessons(false);
     }
 
+    /// <summary>
+    /// Loads all lessons from the disk using a persistent data path so it works for all operating systems.
+    /// If its a reload in runtime it will clear the lessons and then add the customs alongside the prebuild lessons.
+    /// </summary>
+    /// <param name="reload"></param>
     public void LoadAllLessons(bool reload)
     {
         loadedLessons.Clear();
@@ -40,6 +48,10 @@ public class SaveLoadManager : Manager
 
     }
 
+    /// <summary>
+    /// Creates a new profile with the name as string
+    /// </summary>
+    /// <param name="profileName"></param>
     public void CreateNewProfile(string profileName)
     {
         PlayerProfile profile = new PlayerProfile
@@ -53,6 +65,10 @@ public class SaveLoadManager : Manager
         ProfileSaveSystem.SaveProfile(profile);
     }
 
+    /// <summary>
+    /// Loads a profile with a given name
+    /// </summary>
+    /// <param name="profileID"></param>
     public void LoadProfile(string profileID)
     {
         currentProfile = ProfileSaveSystem.LoadProfile(profileID);
@@ -64,6 +80,9 @@ public class SaveLoadManager : Manager
 
     }
 
+    /// <summary>
+    /// Saves the current profile
+    /// </summary>
     public void SaveCurrentProfile()
     {
         ProfileSaveSystem.SaveProfile(currentProfile);

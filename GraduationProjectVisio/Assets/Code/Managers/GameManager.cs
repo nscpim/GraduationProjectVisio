@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
             managers[i].Start();
         }
 
-        //Find a way to make this more clean
+        //Subscribe all listeners of the button here
         createProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().CreateProfileButton);
         SelectProfileButton.onClick.AddListener(GameManager.GetManager<UIManager>().SelectLessonProfileButton);
         CloseButton.onClick.AddListener(GameManager.GetManager<UIManager>().CloseAllPanels);
@@ -133,12 +133,11 @@ public class GameManager : MonoBehaviour
         addStep.onClick.AddListener(GameManager.GetManager<UIManager>().AddStep);
         profile.onClick.AddListener(GameManager.GetManager<UIManager>().OpenProfilePanel);
 
+        //Starting the auto save timer
         autoSaveTimer = new Timer(0, "autosave");
         autoSaveTimer.SetTimer(2);
 
-
-
-
+        //Adding the audio source to the audio system
         GameManager.GetManager<AudioManager>().AddAudioSource(feedbackSource);
     }
 
@@ -148,6 +147,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        //Update all managers and auto saving
         for (int i = 0; i < managers.Length; i++)
         {
             managers[i].Update();
@@ -170,6 +170,10 @@ public class GameManager : MonoBehaviour
     //    return new List<IDataInterface>(allSavedObjects);
     //}
 
+    /// <summary>
+    /// Finding all text components in the hierarchy that are currently active
+    /// </summary>
+    /// <returns></returns>
     public List<TextMeshProUGUI> FindAllTextComponents()
     {
         IEnumerable<TextMeshProUGUI> allText = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<TextMeshProUGUI>();
@@ -177,6 +181,11 @@ public class GameManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Get a timer by its name.
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public Timer GetTimerByName(string name)
     {
         for (int i = 0; i < timers.Count; i++)
@@ -191,7 +200,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Destroy for non monobehaviour classes
+    /// Destroy method for non monobehaviour classes
     /// </summary>
     /// <param name="gameObject"></param>
     public void CustomDestroyGameObject(GameObject gameObject)

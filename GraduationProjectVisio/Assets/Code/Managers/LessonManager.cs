@@ -27,7 +27,9 @@ public class LessonManager : Manager
         "Geweldig",
     };
 
-
+    /// <summary>
+    /// getting hex colors based on the Style Guide in document 3.1
+    /// </summary>
     public override void Start()
     {
         ColorUtility.TryParseHtmlString("#FFD600", out combinationColor);
@@ -36,15 +38,10 @@ public class LessonManager : Manager
 
     }
 
-    public void InitializeLesson(LessonData lesson)
-    {
-        currentLesson = lesson;
-
-        currentStepIndex = 0;
-        AnnounceCurrentStep();
-        UpdateUI();
-    }
-
+   /// <summary>
+   /// Initalizes a lesson based on the name
+   /// </summary>
+   /// <param name="name"></param>
     public void SetLesson(string name)
     {
         LessonData lesson = GetLesson(name);
@@ -54,6 +51,11 @@ public class LessonManager : Manager
         UpdateUI();
     }
 
+    /// <summary>
+    /// Get a lesson by its name
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public LessonData GetLesson(string name)
     {
         for (int i = 0; i < GameManager.instance.lessons.Count; i++)
@@ -67,6 +69,9 @@ public class LessonManager : Manager
         return null;
     }
 
+    /// <summary>
+    /// Listens for input, handles the visual keyboard input alongside that
+    /// </summary>
     public override void Update()
     {
         ReceiveInput();
@@ -114,6 +119,9 @@ public class LessonManager : Manager
             }
         }
     }
+    /// <summary>
+    /// Method to update the UI of the combination texts on screen
+    /// </summary>
     public void UpdateUI()
     {
         GameManager.GetManager<UIManager>().DisplayUI(currentLesson.steps[currentStepIndex].targetKey, GameManager.instance.displayKeyText, newColor,
@@ -122,11 +130,15 @@ public class LessonManager : Manager
         ShowStep(currentLesson.steps[currentStepIndex]);
     }
 
+    /// <summary>
+    /// Shows the current combination of keys on the visual keyboard
+    /// </summary>
+    /// <param name="step"></param>
     public void ShowStep(TypingStep step)
     {
         ResetAllKeys();
 
-        // Highlight required keys
+        // Highlight required keys in the visual keyboard
         foreach (var key in step.requiredKeys)
         {
             if (GameManager.GetManager<VisualKeyboardManager>().keyMap.ContainsKey(key))
@@ -135,7 +147,7 @@ public class LessonManager : Manager
             }
         }
 
-        // Highlight target key
+        // Highlight target key in the visual keyboard
         if (GameManager.GetManager<VisualKeyboardManager>().keyMap.ContainsKey(step.targetKey))
         {
             GameManager.GetManager<VisualKeyboardManager>().keyMap[step.targetKey].SetRequired();
@@ -143,6 +155,9 @@ public class LessonManager : Manager
         Debug.Log("Highlighted all keys");
     }
 
+    /// <summary>
+    /// Resets the visual keyboard
+    /// </summary>
     public void ResetAllKeys()
     {
         foreach (var key in GameManager.GetManager<VisualKeyboardManager>().keyMap.Keys)
@@ -151,6 +166,9 @@ public class LessonManager : Manager
         }
     }
 
+    /// <summary>
+    /// Receives input from input system
+    /// </summary>
     public void ReceiveInput()
     {
         if (currentLesson != null)
@@ -162,7 +180,7 @@ public class LessonManager : Manager
 
             bool allKeysPressed = true;
 
-            // Required keys
+            // Required keys enum check
             foreach (KeyCode key in step.requiredKeys)
             {
                 if (!Input.GetKey(key))
@@ -172,13 +190,13 @@ public class LessonManager : Manager
                 }
             }
 
-            // Target key
+            // Target key check
             if (!Input.GetKey(step.targetKey))
             {
                 allKeysPressed = false;
             }
 
-            // Success
+            //If combination is correct, go to next step
             if (allKeysPressed)
             {
                 stepCompleted = true;
@@ -190,6 +208,9 @@ public class LessonManager : Manager
             }
         }
     }
+    /// <summary>
+    ///  Prepares for the next combination, updates UI for that
+    /// </summary>
     private async void PrepareNextStep()
     {
         await Task.Delay(50);
@@ -202,6 +223,9 @@ public class LessonManager : Manager
         }
     }
 
+    /// <summary>
+    /// Goes to the next step in the steps array of the current lesson
+    /// </summary>
     private void AnnounceCurrentStep()
     {
         if (currentStepIndex >= currentLesson.steps.Count)
@@ -213,6 +237,10 @@ public class LessonManager : Manager
 
 
     }
+    /// <summary>
+    /// When a lesson is complete adds the lesson progression to the current profile.
+    /// </summary>
+    /// <param name="lessonID"></param>
 
     private void CompleteLesson(string lessonID)
     {

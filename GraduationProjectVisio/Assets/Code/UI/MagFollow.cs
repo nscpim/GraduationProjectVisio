@@ -7,6 +7,9 @@ public class MagFollow : MonoBehaviour
     public float distance = 2f;
     public RectTransform magnifierRoot;
 
+    /// <summary>
+    /// Makes the magnifying glass follow the mouse cursor
+    /// </summary>
     void Update()
     {
         Vector3 mousePos = Input.mousePosition;

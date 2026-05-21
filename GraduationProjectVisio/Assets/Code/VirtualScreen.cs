@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class VirtualScreen : GraphicRaycaster
 {
-    public Camera screenCamera; // Reference to the camera responsible for rendering the virtual screen's rendertexture
+    public Camera screenCamera; // Reference to the camera responsible for rendering the virtual screens rendertexture
 
     public GraphicRaycaster screenCaster; // Reference to the GraphicRaycaster of the canvas displayed on the virtual screen
 

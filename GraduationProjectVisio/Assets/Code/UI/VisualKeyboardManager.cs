@@ -8,6 +8,9 @@ public class VisualKeyboardManager : Manager
 
     public Dictionary<KeyCode, KeyUI> keyMap;
 
+    /// <summary>
+    /// Store every key from the visual keyboard in a Dictionary
+    /// </summary>
     public override void Start()
     {
         keyMap = new Dictionary<KeyCode, KeyUI>();

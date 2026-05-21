@@ -128,6 +128,7 @@ public class UIManager : Manager
 
     /// <summary>
     /// Closes all open panels
+    /// Also resets the visual keyboard
     /// </summary>
     public void CloseAllPanels()
     {
@@ -144,15 +145,20 @@ public class UIManager : Manager
         }
     }
 
-
+    /// <summary>
+    /// Makes the fonts larger
+    /// </summary>
     public void FontSizeUp()
     {
         for (int i = 0; i < GameManager.instance.allTextComps.Count; i++)
         {
             GameManager.instance.allTextComps[i].fontSize += 2;
         }
+    
     }
-
+    /// <summary>
+    /// Makes the fonts smaller
+    /// </summary>
     public void FontSizeDown()
     {
         for (int i = 0; i < GameManager.instance.allTextComps.Count; i++)
@@ -161,11 +167,19 @@ public class UIManager : Manager
         }
     }
 
+    /// <summary>
+    /// Toggles the given object on or off in the hierarchy
+    /// </summary>
+    /// <param name="_object"></param>
+    /// <param name="toggle"></param>
     public void ToggleObject(GameObject _object, bool toggle)
     {
         _object.SetActive(toggle);
     }
 
+    /// <summary>
+    /// Fills the lessons in the lessons panel with all lessons currently loaded in
+    /// </summary>
     public void FillLessonUI()
     {
         ClearLessonList();
@@ -186,7 +200,9 @@ public class UIManager : Manager
         ToggleVisualKeyBoard(false);
     }
 
-
+    /// <summary>
+    /// Clears all lessons currently loaded in.
+    /// </summary>
     public void ClearLessonList()
     {
         for (int i = 0; i < lessonList.Count; i++)
@@ -196,6 +212,10 @@ public class UIManager : Manager
         lessonList.Clear();
     }
 
+    /// <summary>
+    /// Sets up a lesson with the lesson data given
+    /// </summary>
+    /// <param name="lesson"></param>
     public void SetupLesson(LessonData lesson)
     {
         ToggleVisualKeyBoard(true);
@@ -204,6 +224,11 @@ public class UIManager : Manager
         ToggleObject(GetPanelByName("InLessonPanel"), true);
     }
 
+
+    /// <summary>
+    /// Toggles the visual keyboard on or off
+    /// </summary>
+    /// <param name="toggle"></param>
     public void ToggleVisualKeyBoard(bool toggle)
     {
         foreach (var item in GameManager.instance.visualKeyboard)
@@ -212,6 +237,9 @@ public class UIManager : Manager
         }
     }
 
+    /// <summary>
+    /// Closes all panels but derived from a button
+    /// </summary>
     public void ClosePanelButtons()
     {
         GameManager.instance.SelectProfileButton.Select();
@@ -279,7 +307,7 @@ public class UIManager : Manager
     }
 
     /// <summary>
-    /// When a profile is clicked load that profile from disk,
+    /// When a profile is clicked load that profile from disk
     /// </summary>
     /// <param name="profileId"></param>
     public void OnProfileClicked(string profileId)
@@ -291,6 +319,9 @@ public class UIManager : Manager
         ToggleObject(GetPanelByName("ProfilesPanel"), true);
     }
 
+    /// <summary>
+    /// Creates a new profile when the create profile button is pressed
+    /// </summary>
     public void OnCreateProfileClicked()
     {
         string playerName = GameManager.instance.nameInputField.text;
@@ -309,6 +340,9 @@ public class UIManager : Manager
 
 
     #region Custom Lessons
+    /// <summary>
+    /// Starting process of creating a lesson
+    /// </summary>
     public void StartCreatingLesson()
     {
         CloseAllPanels();
@@ -317,6 +351,9 @@ public class UIManager : Manager
         PrepareLesson();
     }
 
+    /// <summary>
+    /// Prepares the lesson creator and adds a default step
+    /// </summary>
     public void PrepareLesson()
     {
         Debug.Log("Start creating lesson");
@@ -364,17 +401,27 @@ public class UIManager : Manager
         }
     }
 
+    /// <summary>
+    /// Adds a required key UI
+    /// </summary>
     public void AddRequiredKey()
     {
         var requiredKey = GameObject.Instantiate(GameManager.instance.requiredKey, lastTypingStep.GetComponent<TypingStepUI>().requiredKeysContainer);
     }
 
+    /// <summary>
+    /// Removes a step from the combination
+    /// </summary>
+    /// <param name="step"></param>
     public void RemoveStep(TypingStepUI step)
     {
         stepUIs.Remove(step);
         GameObject.Destroy(step.gameObject);
     }
 
+    /// <summary>
+    /// Saves the lesson to disk
+    /// </summary>
     public void SaveLesson()
     {
         LessonSaveData lesson = new LessonSaveData();

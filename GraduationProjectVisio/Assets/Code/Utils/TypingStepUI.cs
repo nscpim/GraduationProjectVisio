@@ -20,7 +20,9 @@ public class TypingStepUI : MonoBehaviour
         SetupDropdown();
         SetupRequiredKeyToggles();
     }
-
+    /// <summary>
+    /// Fills the dropdown menu with usable keys
+    /// </summary>
     void SetupDropdown()
     {
         targetKeyDropdown.ClearOptions();
@@ -39,11 +41,20 @@ public class TypingStepUI : MonoBehaviour
         targetKeyDropdown.AddOptions(options);
     }
 
+    /// <summary>
+    /// Gets the current selected key in the drpdown
+    /// </summary>
+    /// <returns></returns>
     public KeyCode GetSelectedKey()
     {
         return availableKeys[targetKeyDropdown.value];
     }
 
+    /// <summary>
+    /// Filters unwanted keys.
+    /// </summary>
+    /// <param name="key"></param>
+    /// <returns></returns>
     bool isValidKey(KeyCode key)
     {
         string keyString = key.ToString();
@@ -58,6 +69,9 @@ public class TypingStepUI : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// Adds the additional keys to the requiredkeys list
+    /// </summary>
     void SetupRequiredKeyToggles()
     {
         requiredKeys.Clear();
@@ -68,7 +82,10 @@ public class TypingStepUI : MonoBehaviour
     }
 
     
-
+    /// <summary>
+    /// Gets the data of the lesson creator combing the target key and required keys
+    /// </summary>
+    /// <returns></returns>
     public TypingStep GetData()
     {
         TypingStep step = new TypingStep();

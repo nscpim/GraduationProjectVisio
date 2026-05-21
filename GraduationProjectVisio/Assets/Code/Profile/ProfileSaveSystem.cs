@@ -6,6 +6,10 @@ public static class ProfileSaveSystem
     private static string FolderPath =>
        Path.Combine(Application.persistentDataPath, "Profiles");
 
+    /// <summary>
+    /// Saves profile to disk
+    /// </summary>
+    /// <param name="profile"></param>
     public static void SaveProfile(PlayerProfile profile)
     {
         if (!Directory.Exists(FolderPath))
@@ -18,6 +22,11 @@ public static class ProfileSaveSystem
         File.WriteAllText(path, json);
     }
 
+    /// <summary>
+    /// Loads profile from disk
+    /// </summary>
+    /// <param name="profileId"></param>
+    /// <returns></returns>
     public static PlayerProfile LoadProfile(string profileId)
     {
         string path = GetProfilePath(profileId);
@@ -32,6 +41,10 @@ public static class ProfileSaveSystem
         return JsonUtility.FromJson<PlayerProfile>(json);
     }
 
+    /// <summary>
+    /// Deletes a profile
+    /// </summary>
+    /// <param name="profileId"></param>
     public static void DeleteProfile(string profileId)
     {
         string path = GetProfilePath(profileId);
@@ -39,6 +52,11 @@ public static class ProfileSaveSystem
         if (File.Exists(path))
             File.Delete(path);
     }
+    /// <summary>
+    /// Gets the profile path of the stores profiles
+    /// </summary>
+    /// <param name="profileId"></param>
+    /// <returns></returns>
     private static string GetProfilePath(string profileId)
     {
         return Path.Combine(FolderPath, $"profile_{profileId}.json");

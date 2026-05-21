@@ -13,6 +13,9 @@ public class RequiredKeyItemUI : MonoBehaviour
         PopulateDropdown();
     }
 
+    /// <summary>
+    /// Populates the dropdown menus with usable keys
+    /// </summary>
     void PopulateDropdown()
     {
         keyDropdown.ClearOptions();
@@ -30,6 +33,11 @@ public class RequiredKeyItemUI : MonoBehaviour
         keyDropdown.AddOptions(options);
     }
 
+    /// <summary>
+    /// Filters keys that are unwanted or not being used
+    /// </summary>
+    /// <param name="key"></param>
+    /// <returns></returns>
     bool isValidKey(KeyCode key)
     {
         string keyString = key.ToString();
@@ -44,7 +52,10 @@ public class RequiredKeyItemUI : MonoBehaviour
         return true;
     }
 
-
+    /// <summary>
+    /// Gets the current key of the dropdown menu
+    /// </summary>
+    /// <returns></returns>
     public KeyCode GetKey()
     {
         return (KeyCode)keyDropdown.value;

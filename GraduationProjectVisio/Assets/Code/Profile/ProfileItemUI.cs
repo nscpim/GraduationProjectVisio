@@ -11,6 +11,11 @@ public class ProfileItemUI : MonoBehaviour
     private string profileId;
 
 
+    /// <summary>
+    /// Sets up a profile UI in the profiles panel
+    /// </summary>
+    /// <param name="profile"></param>
+    /// <param name="onClick"></param>
     public void Setup(PlayerProfile profile, Action<string> onClick) 
     {
         profileId = profile.profileID;
