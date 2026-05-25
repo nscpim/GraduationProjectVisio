@@ -10,6 +10,8 @@ public class TypingStepUI : MonoBehaviour
     public TMP_Dropdown targetKeyDropdown;
     public TMP_InputField wrongTextInput;
 
+
+
     public Transform requiredKeysContainer;
 
     private List<KeyCode> availableKeys = new List<KeyCode>();
@@ -19,6 +21,7 @@ public class TypingStepUI : MonoBehaviour
     {
         SetupDropdown();
         SetupRequiredKeyToggles();
+
     }
     /// <summary>
     /// Fills the dropdown menu with usable keys
@@ -58,10 +61,10 @@ public class TypingStepUI : MonoBehaviour
     bool isValidKey(KeyCode key)
     {
         string keyString = key.ToString();
-        if (key >= KeyCode.F13 && key <= KeyCode.F24)
-        {
-            return false;
-        }
+        // if (key >= KeyCode.F13 && key <= KeyCode.F24)
+        // {
+        //    return false;
+        // }
         if (keyString.Contains("Joy"))
         {
             return false;
@@ -77,11 +80,13 @@ public class TypingStepUI : MonoBehaviour
         requiredKeys.Clear();
         foreach (Transform child in requiredKeysContainer)
         {
-           requiredKeys.Add(child.GetComponent<RequiredKeyItemUI>().GetKey());
+            requiredKeys.Add(child.GetComponent<RequiredKeyItemUI>().GetKey());
         }
     }
 
-    
+
+
+
     /// <summary>
     /// Gets the data of the lesson creator combing the target key and required keys
     /// </summary>

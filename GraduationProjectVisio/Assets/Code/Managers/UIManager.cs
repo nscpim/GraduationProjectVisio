@@ -137,7 +137,7 @@ public class UIManager : Manager
         {
             GameManager.instance.panels[i].SetActive(false);
         }
-  
+
         ToggleVisualKeyBoard(true);
         foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
         {
@@ -154,7 +154,7 @@ public class UIManager : Manager
         {
             GameManager.instance.allTextComps[i].fontSize += 2;
         }
-    
+
     }
     /// <summary>
     /// Makes the fonts smaller
@@ -316,7 +316,6 @@ public class UIManager : Manager
         GameManager.GetManager<SaveLoadManager>().LoadProfile(profileId);
         GameManager.instance.profileName.text = GameManager.GetManager<SaveLoadManager>().currentProfile.profileName;
         CloseAllPanels();
-        ToggleObject(GetPanelByName("ProfilesPanel"), true);
     }
 
     /// <summary>
@@ -392,7 +391,7 @@ public class UIManager : Manager
         {
             if (item.name == "AddKeyButton")
             {
-                item.onClick.AddListener(AddRequiredKey);
+                item.onClick.AddListener(() => AddRequiredKey(item.transform));
             }
         }
         for (int i = 0; i < stepUIs.Count; i++)
@@ -404,9 +403,13 @@ public class UIManager : Manager
     /// <summary>
     /// Adds a required key UI
     /// </summary>
-    public void AddRequiredKey()
+    public void AddRequiredKey(Transform fromButton)
     {
-        var requiredKey = GameObject.Instantiate(GameManager.instance.requiredKey, lastTypingStep.GetComponent<TypingStepUI>().requiredKeysContainer);
+        //Somehow the prefab location is being used, setting it to a better location.
+        var requiredKey = GameObject.Instantiate(GameManager.instance.requiredKey, new Vector3(GameManager.instance.requiredKey.transform.position.x + 1325,
+            lastTypingStep.transform.position.y - 25, GameManager.instance.requiredKey.transform.position.z), Quaternion.identity, lastTypingStep.GetComponent<TypingStepUI>().requiredKeysContainer);
+
+
     }
 
     /// <summary>
@@ -429,13 +432,28 @@ public class UIManager : Manager
         lesson.id = System.Guid.NewGuid().ToString();
         lesson.lessonName = GameManager.instance.lessonNameInput.text;
 
-        lesson.steps = new List<TypingStep>();
+        lesson.steps = new List<TypingStepSaveData>();
 
         foreach (var stepUI in stepUIs)
         {
-            lesson.steps.Add(stepUI.GetData());
-        }
+            TypingStep step = stepUI.GetData();
 
+            TypingStepSaveData saveStep = new TypingStepSaveData();
+
+            saveStep.instructionText = step.instructionText;
+            saveStep.instructionIfWrong = step.instructionIfWrong;
+
+            saveStep.targetKey = (int)step.targetKey;
+
+            saveStep.requiredKeys = new List<int>();
+
+            foreach (var key in step.requiredKeys)
+            {
+                saveStep.requiredKeys.Add((int)key);
+            }
+
+            lesson.steps.Add(saveStep);
+        }
         LessonFileSystem.SaveLesson(lesson);
 
         Debug.Log("Lesson saved with " + lesson.steps.Count + " steps!");

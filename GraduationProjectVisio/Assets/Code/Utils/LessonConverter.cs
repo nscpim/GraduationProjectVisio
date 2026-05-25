@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class LessonConverter 
@@ -10,7 +11,28 @@ public static class LessonConverter
     public static LessonData ToScriptableObject(LessonSaveData data)
     {
         LessonData so = ScriptableObject.CreateInstance<LessonData>();
-        so.steps = data.steps;
+
+        foreach (var saveStep in data.steps)
+        {
+            so.steps = new List<TypingStep>();
+
+            TypingStep step = new TypingStep();
+
+            step.instructionText = saveStep.instructionText;
+
+            step.instructionIfWrong = saveStep.instructionIfWrong;
+
+            step.targetKey = (KeyCode)saveStep.targetKey;
+
+            step.requiredKeys = new List<KeyCode>();
+
+            foreach (var key in saveStep.requiredKeys)
+            {
+                step.requiredKeys.Add((KeyCode)key);
+            }
+
+            so.steps.Add(step);
+        }
         so.id = data.id;
         so.lessonName = data.lessonName;
         so.name = data.lessonName;

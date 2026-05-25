@@ -6,5 +6,5 @@ public class LessonSaveData
 {
     public string id;
     public string lessonName;
-    public List<TypingStep> steps;
+    public List<TypingStepSaveData> steps;
 }

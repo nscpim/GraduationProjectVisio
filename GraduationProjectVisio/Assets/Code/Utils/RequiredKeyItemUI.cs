@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class RequiredKeyItemUI : MonoBehaviour
 {
     public TMP_Dropdown keyDropdown;
+    public List<KeyCode> availableKeys = new List<KeyCode>();
+    List<string> options = new List<string>();
+    public 
 
     void Awake()
     {
@@ -20,12 +23,12 @@ public class RequiredKeyItemUI : MonoBehaviour
     {
         keyDropdown.ClearOptions();
 
-        List<string> options = new List<string>();
 
         foreach (KeyCode key in Enum.GetValues(typeof(KeyCode)))
         {
             if (isValidKey(key))
             {
+                availableKeys.Add(key);
                 options.Add(key.ToString());
             }
         }
@@ -41,10 +44,10 @@ public class RequiredKeyItemUI : MonoBehaviour
     bool isValidKey(KeyCode key)
     {
         string keyString = key.ToString();
-        if (key >= KeyCode.F13 && key <= KeyCode.F24)
-        {
-            return false;
-        }
+        //if (key >= KeyCode.F13 && key <= KeyCode.F24)
+        //{
+        //    return false;
+        //}
         if (keyString.Contains("Joy"))
         {
             return false;
@@ -58,6 +61,6 @@ public class RequiredKeyItemUI : MonoBehaviour
     /// <returns></returns>
     public KeyCode GetKey()
     {
-        return (KeyCode)keyDropdown.value;
+        return availableKeys[keyDropdown.value];
     }
 }
