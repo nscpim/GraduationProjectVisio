@@ -315,6 +315,7 @@ public class UIManager : Manager
         Debug.Log("Loading Profile" + profileId);
         GameManager.GetManager<SaveLoadManager>().LoadProfile(profileId);
         GameManager.instance.profileName.text = GameManager.GetManager<SaveLoadManager>().currentProfile.profileName;
+        GameManager.instance.profileProgressionText.text = GameManager.GetManager<SaveLoadManager>().currentProfile.completedLessons.ToString();
         CloseAllPanels();
     }
 
