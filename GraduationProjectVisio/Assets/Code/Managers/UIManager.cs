@@ -40,6 +40,8 @@ public class UIManager : Manager
         newText = ReplaceString(newText, "RightArrow", "Pijltje Rechts");
         newText = ReplaceString(newText, "UpArrow", "Pijltje Boven");
         newText = ReplaceString(newText, "DownArrow", "Pijltje Onder");
+        newText = ReplaceString(newText, "Left", "Linker");
+        newText = ReplaceString(newText, "Right", "Rechter");
         p.Append(newText.ToString() + " + ");
 
 
@@ -52,6 +54,8 @@ public class UIManager : Manager
             newKey = ReplaceString(newKey, "RightArrow", "Pijltje Rechts");
             newKey = ReplaceString(newKey, "UpArrow", "Pijltje Boven");
             newKey = ReplaceString(newKey, "DownArrow", "Pijltje Onder");
+            newText = ReplaceString(newText, "Left", "Linker");
+            newText = ReplaceString(newText, "Right", "Rechter");
             if (i == combinationKeys.Count - 1)
             {
                 p.Append(newKey);
@@ -191,10 +195,12 @@ public class UIManager : Manager
 
             lessonButton.GetComponentInChildren<TextMeshProUGUI>().text = lesson.lessonName;
             lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
+            lessonButton.transform.localScale = new Vector3(1.5f, 1.5f);
             ColorBlock color = lessonButton.colors;
             color.selectedColor = highlightColor;
             lessonButton.colors = color;
             lessonList.Add(lessonButton.gameObject);
+           // ToggleObject(GameManager.instance.scrollBar.gameObject, true);
         }
         Debug.Log("Filled in all Lessons");
         ToggleVisualKeyBoard(false);
@@ -218,6 +224,7 @@ public class UIManager : Manager
     /// <param name="lesson"></param>
     public void SetupLesson(LessonData lesson)
     {
+       // ToggleObject(GameManager.instance.scrollBar.gameObject, false);
         ToggleVisualKeyBoard(true);
         CloseAllPanels();
         GameManager.GetManager<LessonManager>().SetLesson(lesson.lessonName);
@@ -370,6 +377,7 @@ public class UIManager : Manager
 
         // Add a default step
         AddStep();
+        ToggleVisualKeyBoard(false);
     }
 
     /// <summary>
@@ -407,8 +415,8 @@ public class UIManager : Manager
     public void AddRequiredKey(Transform fromButton)
     {
         //Somehow the prefab location is being used, setting it to a better location.
-        var requiredKey = GameObject.Instantiate(GameManager.instance.requiredKey, new Vector3(GameManager.instance.requiredKey.transform.position.x + 1325,
-            lastTypingStep.transform.position.y - 25, GameManager.instance.requiredKey.transform.position.z), Quaternion.identity, lastTypingStep.GetComponent<TypingStepUI>().requiredKeysContainer);
+        var requiredKey = GameObject.Instantiate(GameManager.instance.requiredKey, new Vector3(GameManager.instance.requiredKey.transform.position.x + 1475,
+            lastTypingStep.transform.position.y, GameManager.instance.requiredKey.transform.position.z), Quaternion.identity, lastTypingStep.GetComponent<TypingStepUI>().requiredKeysContainer);
 
 
     }
@@ -456,6 +464,7 @@ public class UIManager : Manager
             lesson.steps.Add(saveStep);
         }
         LessonFileSystem.SaveLesson(lesson);
+        GameManager.instance.pathName.text = "Path: " + Application.persistentDataPath.ToString();
 
         Debug.Log("Lesson saved with " + lesson.steps.Count + " steps!");
 

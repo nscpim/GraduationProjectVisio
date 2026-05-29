@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     public Button addStep;
     public GameObject[] visualKeyboard;
     public TextMeshProUGUI profileProgressionText;
+    public TextMeshProUGUI pathName;
+    public Transform scrollBar;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
