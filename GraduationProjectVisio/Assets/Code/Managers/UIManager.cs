@@ -17,6 +17,7 @@ public class UIManager : Manager
     private Color highlightColor;
 
 
+
     public override void Start()
     {
         ColorUtility.TryParseHtmlString("#4FB6AC", out highlightColor);
@@ -40,8 +41,10 @@ public class UIManager : Manager
         newText = ReplaceString(newText, "RightArrow", "Pijltje Rechts");
         newText = ReplaceString(newText, "UpArrow", "Pijltje Boven");
         newText = ReplaceString(newText, "DownArrow", "Pijltje Onder");
-        newText = ReplaceString(newText, "Left", "Linker");
-        newText = ReplaceString(newText, "Right", "Rechter");
+        newText = ReplaceString(newText, "LeftAlt", "Linker Alt");
+        newText = ReplaceString(newText, "RightAlt", "Rechter Alt");
+        newText = ReplaceString(newText, "LeftCtrl", "Linker Control");
+        newText = ReplaceString(newText, "RightAlt", "Rechter Control");
         p.Append(newText.ToString() + " + ");
 
 
@@ -54,8 +57,10 @@ public class UIManager : Manager
             newKey = ReplaceString(newKey, "RightArrow", "Pijltje Rechts");
             newKey = ReplaceString(newKey, "UpArrow", "Pijltje Boven");
             newKey = ReplaceString(newKey, "DownArrow", "Pijltje Onder");
-            newText = ReplaceString(newText, "Left", "Linker");
-            newText = ReplaceString(newText, "Right", "Rechter");
+            newKey = ReplaceString(newKey, "LeftAlt", "Linker Alt");
+            newKey = ReplaceString(newKey, "RightAlt", "Rechter Alt");
+            newKey = ReplaceString(newKey, "LeftCtrl", "Linker Control");
+            newKey = ReplaceString(newKey, "RightAlt", "Rechter Control");
             if (i == combinationKeys.Count - 1)
             {
                 p.Append(newKey);
@@ -93,7 +98,6 @@ public class UIManager : Manager
         textElement.text = text;
         textElement.color = color;
     }
-
 
     /// <summary>
     /// Gets a panel by name, returning a gameobject
@@ -199,8 +203,9 @@ public class UIManager : Manager
             ColorBlock color = lessonButton.colors;
             color.selectedColor = highlightColor;
             lessonButton.colors = color;
+            lessonButton.gameObject.AddComponent<LessonTTS>();
             lessonList.Add(lessonButton.gameObject);
-           // ToggleObject(GameManager.instance.scrollBar.gameObject, true);
+            // ToggleObject(GameManager.instance.scrollBar.gameObject, true);
         }
         Debug.Log("Filled in all Lessons");
         ToggleVisualKeyBoard(false);
@@ -224,7 +229,7 @@ public class UIManager : Manager
     /// <param name="lesson"></param>
     public void SetupLesson(LessonData lesson)
     {
-       // ToggleObject(GameManager.instance.scrollBar.gameObject, false);
+        // ToggleObject(GameManager.instance.scrollBar.gameObject, false);
         ToggleVisualKeyBoard(true);
         CloseAllPanels();
         GameManager.GetManager<LessonManager>().SetLesson(lesson.lessonName);

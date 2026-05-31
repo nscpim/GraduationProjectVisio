@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI profileProgressionText;
     public TextMeshProUGUI pathName;
     public Transform scrollBar;
+    public TextMeshProUGUI previewText;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
