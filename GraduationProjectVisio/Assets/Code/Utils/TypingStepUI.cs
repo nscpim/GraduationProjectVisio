@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Text;
 
 public class TypingStepUI : MonoBehaviour
 {
@@ -10,13 +11,14 @@ public class TypingStepUI : MonoBehaviour
     public TMP_Dropdown targetKeyDropdown;
     public TMP_InputField wrongTextInput;
 
-
+    public TMP_Text previewText;
 
     public Transform requiredKeysContainer;
 
     private List<KeyCode> availableKeys = new List<KeyCode>();
     private List<KeyCode> requiredKeys = new List<KeyCode>();
 
+    
     void Start()
     {
         SetupDropdown();
@@ -42,6 +44,31 @@ public class TypingStepUI : MonoBehaviour
         }
 
         targetKeyDropdown.AddOptions(options);
+    }
+
+    /// <summary>
+    /// Whenever the dropdown changes update the preview
+    /// </summary>
+    public void UpdatePreview()
+    {
+        string combo = "";
+        StringBuilder p = new StringBuilder();
+        
+
+        if (targetKeyDropdown.value > 0)
+        {
+            combo += targetKeyDropdown.options[targetKeyDropdown.value].text;
+            p.Append(combo + " + ");
+        }
+
+        foreach (Transform requiredKey in requiredKeysContainer)
+        {
+            Debug.Log(requiredKey.GetComponent<RequiredKeyItemUI>().GetKey().ToString() + requiredKeysContainer.childCount.ToString());
+            p.Append(requiredKey.GetComponent<RequiredKeyItemUI>().GetKey().ToString() + " + ");
+        }
+        previewText.text = p.ToString();
+        Debug.Log("Updated Preview");
+      
     }
 
     /// <summary>

@@ -23,6 +23,7 @@ public class AudioManager : Manager
     /// <param name="text"></param>
     public void Speak(string text)
     {
+        Debug.Log("Spoken: " + text);
         if (GameManager.GetManager<AndroidTTS>() == null)
         {
             return;
