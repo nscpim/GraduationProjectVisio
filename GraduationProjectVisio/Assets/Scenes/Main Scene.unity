@@ -12459,6 +12459,7 @@ MonoBehaviour:
   previewText: {fileID: 0}
   lessons:
   - {fileID: 11400000, guid: 20fca4b437c12c94a99c1732ba03835d, type: 2}
+  - {fileID: 11400000, guid: 0049f0231506deb40b9dfb1780000794, type: 2}
   - {fileID: 11400000, guid: affb97e206ccffa4d915dfc401b7c222, type: 2}
   - {fileID: 11400000, guid: 1d601c5e4089e0e4389d5d4b1a0e5a55, type: 2}
   - {fileID: 11400000, guid: a450fbffe3a66654083e32263b489f86, type: 2}
@@ -19664,6 +19665,10 @@ PrefabInstance:
     - target: {fileID: 4686898006982382239, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689348784459038503, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4689348784459038503, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_RaycastTarget

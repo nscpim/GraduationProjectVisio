@@ -14,4 +14,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LessonData
   id: 0
   lessonName: Fusion
-  steps: []
+  steps:
+  - instructionText: Vergroten
+    targetKey: 301
+    requiredKeys: 11010000
+    instructionIfWrong: 
+  - instructionText: Verkleinen
+    targetKey: 301
+    requiredKeys: 12010000
+    instructionIfWrong: 
+  - instructionText: Vergroting 1x
+    targetKey: 301
+    requiredKeys: 0d000000
+    instructionIfWrong: 
+  - instructionText: Kleuraccentueringen aan/uit
+    targetKey: 301
+    requiredKeys: 63000000
+    instructionIfWrong: 
+  - instructionText: Open Fusion paneel
+    targetKey: 301
+    requiredKeys: 3201000075000000
+    instructionIfWrong: 
+  - instructionText: Verschuif het scherm
+    targetKey: 301
+    requiredKeys: 3001000013010000
+    instructionIfWrong: 
+  - instructionText: Zoomtext aan/uit
+    targetKey: 301
+    requiredKeys: 320100000d000000
+    instructionIfWrong: 
+  - instructionText: Voorlezen starten
+    targetKey: 277
+    requiredKeys: 12010000
+    instructionIfWrong: 
+  - instructionText: Spraak aan/uit
+    targetKey: 277
+    requiredKeys: 2000000073000000
+    instructionIfWrong: 
+  - instructionText: Type echo instellen
+    targetKey: 277
+    requiredKeys: 02010000
+    instructionIfWrong: 
+  - instructionText: Open jaws menu
+    targetKey: 277
+    requiredKeys: 6a000000
+    instructionIfWrong: 
+  - instructionText: Selecteer stemprofiel
+    targetKey: 306
+    requiredKeys: 1501000073000000
+    instructionIfWrong: 
+  - instructionText: Lees geselecteerde tekst
+    targetKey: 277
+    requiredKeys: 3001000012010000
+    instructionIfWrong: 
+  - instructionText: Verder of terug navigeren
+    targetKey: 273
+    requiredKeys: 12010000
+    instructionIfWrong: 
+  - instructionText: Naar begin pagina
+    targetKey: 306
+    requiredKeys: 16010000
+    instructionIfWrong: 
+  - instructionText: Koppenlijst
+    targetKey: 277
+    requiredKeys: 1f010000
+    instructionIfWrong: 
+  - instructionText: Linklijst
+    targetKey: 277
+    requiredKeys: 20010000
+    instructionIfWrong: 
+  - instructionText: Formulierenelementenlijst
+    targetKey: 277
+    requiredKeys: 1e010000
+    instructionIfWrong: 

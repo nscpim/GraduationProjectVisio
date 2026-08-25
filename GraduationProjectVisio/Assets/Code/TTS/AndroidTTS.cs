@@ -15,17 +15,11 @@ public class AndroidTTS : Manager
         //Try to get the text to speech Java object
         try
         {
-            AndroidJavaClass unityPlayer =
-                new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 
-            AndroidJavaObject activity =
-                unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+            AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
 
-            tts = new AndroidJavaObject(
-                "android.speech.tts.TextToSpeech",
-                activity,
-                null
-            );
+            tts = new AndroidJavaObject("android.speech.tts.TextToSpeech", activity, null);
 
             InitializeTTS();
         }
@@ -47,8 +41,7 @@ public class AndroidTTS : Manager
 
         try
         {
-            AndroidJavaObject locale =
-                new AndroidJavaObject("java.util.Locale", "nl", "NL");
+            AndroidJavaObject locale = new AndroidJavaObject("java.util.Locale", "nl", "NL");
 
             tts.Call<int>("setLanguage", locale);
 

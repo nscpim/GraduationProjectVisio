@@ -38,10 +38,10 @@ public class LessonManager : Manager
 
     }
 
-   /// <summary>
-   /// Initalizes a lesson based on the name
-   /// </summary>
-   /// <param name="name"></param>
+    /// <summary>
+    /// Initalizes a lesson based on the name
+    /// </summary>
+    /// <param name="name"></param>
     public void SetLesson(string name)
     {
         LessonData lesson = GetLesson(name);
@@ -77,16 +77,13 @@ public class LessonManager : Manager
         ReceiveInput();
         if (currentLesson != null)
         {
-            TypingStep step; 
-            try
+            TypingStep step;
+
+            if (currentStepIndex >= currentLesson.steps.Count)
             {
-                step = currentLesson.steps[currentStepIndex];
+                return;
             }
-            catch (IndexOutOfRangeException e)
-            {
-                Debug.Log(e.Message);
-                throw;
-            }
+            step = currentLesson.steps[currentStepIndex];
 
             // Create valid key set adding the main key
             HashSet<KeyCode> validKeys = new HashSet<KeyCode>
@@ -241,7 +238,6 @@ public class LessonManager : Manager
     /// When a lesson is complete adds the lesson progression to the current profile.
     /// </summary>
     /// <param name="lessonID"></param>
-
     private void CompleteLesson(string lessonID)
     {
         GameManager.GetManager<AudioManager>().Speak("Les afgerond.");

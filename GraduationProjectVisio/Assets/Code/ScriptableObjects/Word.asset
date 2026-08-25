@@ -15,47 +15,51 @@ MonoBehaviour:
   id: 3
   lessonName: Word
   steps:
-  - instructionText: Typ de combinatie voor @
-    targetKey: 50
-    requiredKeys: 30010000
-    instructionIfWrong: 
-  - instructionText: Selecteer Alles Combinatie
-    targetKey: 97
-    requiredKeys: 32010000
-    instructionIfWrong: 
-  - instructionText: Combinatie 3
-    targetKey: 101
-    requiredKeys: 3201000034010000
-    instructionIfWrong: 
-  - instructionText: 
-    targetKey: 0
+  - instructionText: Help
+    targetKey: 282
     requiredKeys: 
     instructionIfWrong: 
-  - instructionText: 
-    targetKey: 0
-    requiredKeys: 
+  - instructionText: Nieuw  Bestand
+    targetKey: 306
+    requiredKeys: 6e000000
     instructionIfWrong: 
-  - instructionText: 
-    targetKey: 0
-    requiredKeys: 
+  - instructionText: Openen
+    targetKey: 306
+    requiredKeys: 6f000000
     instructionIfWrong: 
-  - instructionText: 
-    targetKey: 0
-    requiredKeys: 
+  - instructionText: Printen
+    targetKey: 306
+    requiredKeys: 70000000
     instructionIfWrong: 
-  - instructionText: 
-    targetKey: 0
-    requiredKeys: 
+  - instructionText: Afdruk voorbeeld
+    targetKey: 306
+    requiredKeys: 1b010000
     instructionIfWrong: 
-  - instructionText: 
-    targetKey: 0
-    requiredKeys: 
+  - instructionText: Wisselen tussen word bestanden
+    targetKey: 306
+    requiredKeys: 1f010000
     instructionIfWrong: 
-  - instructionText: 
-    targetKey: 0
-    requiredKeys: 
+  - instructionText: Bestand sluiten
+    targetKey: 306
+    requiredKeys: 77000000
     instructionIfWrong: 
-  - instructionText: 
-    targetKey: 0
-    requiredKeys: 
+  - instructionText: Venster maximaliseren
+    targetKey: 306
+    requiredKeys: 23010000
+    instructionIfWrong: 
+  - instructionText: Venster grootte
+    targetKey: 308
+    requiredKeys: 20000000
+    instructionIfWrong: 
+  - instructionText: Venster splitsen
+    targetKey: 306
+    requiredKeys: 3401000073000000
+    instructionIfWrong: 
+  - instructionText: Concept weergave
+    targetKey: 306
+    requiredKeys: 3401000067000000
+    instructionIfWrong: 
+  - instructionText: Afdrukweergave activeren
+    targetKey: 306
+    requiredKeys: 3401000070000000
     instructionIfWrong: 

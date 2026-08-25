@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9b1f166716889468e4d61a7a1d4dd4, type: 3}
+  m_Name: Word Acties
+  m_EditorClassIdentifier: Assembly-CSharp::LessonData
+  id: 8
+  lessonName: Word Acties
+  steps:
+  - instructionText: Per woord/paragraaf
+    targetKey: 306
+    requiredKeys: 12010000
+    instructionIfWrong: 
+  - instructionText: Begin/einde document
+    targetKey: 306
+    requiredKeys: 16010000
+    instructionIfWrong: 
+  - instructionText: Alles selecteren
+    targetKey: 306
+    requiredKeys: 61000000
+    instructionIfWrong: 
+  - instructionText: Spring naar laatste wijziging
+    targetKey: 304
+    requiredKeys: 1e010000
+    instructionIfWrong: 
+  - instructionText: 'Tabel: volgende cel'
+    targetKey: 304
+    requiredKeys: 09000000
+    instructionIfWrong: 
+  - instructionText: 'Tabel: begin rij'
+    targetKey: 308
+    requiredKeys: 16010000
+    instructionIfWrong: 
+  - instructionText: 'Tabel: begin kolom'
+    targetKey: 308
+    requiredKeys: 12010000
+    instructionIfWrong: 
+  - instructionText: Tabel selecteren
+    targetKey: 308
+    requiredKeys: 05010000
+    instructionIfWrong: 
+  - instructionText: "Kopi\xEBren"
+    targetKey: 306
+    requiredKeys: 63000000
+    instructionIfWrong: 
+  - instructionText: Knippen
+    targetKey: 306
+    requiredKeys: 78000000
+    instructionIfWrong: 
+  - instructionText: Plakken
+    targetKey: 306
+    requiredKeys: 76000000
+    instructionIfWrong: 
+  - instructionText: Plakken speciaal
+    targetKey: 306
+    requiredKeys: 3401000076000000
+    instructionIfWrong: 
+  - instructionText: "Opmaak kopi\xEBren"
+    targetKey: 306
+    requiredKeys: 3001000063000000
+    instructionIfWrong: 
+  - instructionText: Opmaak plakken
+    targetKey: 306
+    requiredKeys: 3001000076000000
+    instructionIfWrong: 
+  - instructionText: Zoeken
+    targetKey: 306
+    requiredKeys: 66000000
+    instructionIfWrong: 
+  - instructionText: Volgende zoeken
+    targetKey: 306
+    requiredKeys: 19010000
+    instructionIfWrong: 
+  - instructionText: Woord opnieuw zoeken
+    targetKey: 304
+    requiredKeys: 1d010000
+    instructionIfWrong: 
+  - instructionText: Ga naar
+    targetKey: 306
+    requiredKeys: 67000000
+    instructionIfWrong: 
+  - instructionText: Vervangen
+    targetKey: 306
+    requiredKeys: 68000000
+    instructionIfWrong: 
+  - instructionText: Ongedaan maken
+    targetKey: 306
+    requiredKeys: 7a000000
+    instructionIfWrong: 
+  - instructionText: Herhalen
+    targetKey: 306
+    requiredKeys: 79000000
+    instructionIfWrong: 
+  - instructionText: Woord verwijderen
+    targetKey: 306
+    requiredKeys: 7f000000
+    instructionIfWrong: 
+  - instructionText: Woorden tellen
+    targetKey: 306
+    requiredKeys: 3001000067000000
+    instructionIfWrong: 
