@@ -27,6 +27,13 @@ public class LessonManager : Manager
         "Geweldig",
     };
 
+
+    private Vector2 currentMousePos;
+    private Vector2 lastMousePos;
+    private bool mouseDetected;
+    private Timer mouseDetectTimer;
+    private GameObject currentSelectedUI;
+
     /// <summary>
     /// getting hex colors based on the Style Guide in document 3.1
     /// </summary>
@@ -36,6 +43,9 @@ public class LessonManager : Manager
         ColorUtility.TryParseHtmlString("#00AEEF", out descriptionColor);
         ColorUtility.TryParseHtmlString("#000000", out newColor);
 
+        mouseDetectTimer = new Timer(3, "MouseDetection");
+        Cursor.lockState = CursorLockMode.Confined;
+        lastMousePos = currentMousePos;
     }
 
     /// <summary>
@@ -74,6 +84,12 @@ public class LessonManager : Manager
     /// </summary>
     public override void Update()
     {
+        if (mouseDetectTimer.TimerDone() && mouseDetectTimer.isActive)
+        {
+            mouseDetectTimer.StopTimer();
+            GameManager.GetManager<UIManager>().SetFirstIndex(false);
+        }
+
         ReceiveInput();
         if (currentLesson != null)
         {
@@ -170,6 +186,9 @@ public class LessonManager : Manager
     {
         if (currentLesson != null)
         {
+            DetectMouseInput();
+            
+          
             Debug.Log(currentLesson.lessonName);
             if (stepCompleted) return;
 
@@ -278,4 +297,39 @@ public class LessonManager : Manager
         GameManager.GetManager<UIManager>().CloseAllPanels();
 
     }
+
+    public void ActivateFirstIndex() 
+    {
+        GameManager.GetManager<UIManager>().SetFirstIndex(true);
+        mouseDetectTimer.SetTimer(5);
+    }
+
+    /// <summary>
+    /// Detects mouse input and changing of UI button selection input and brings back the full keyboard control, if left alone it will not focus. During this the lesson can still be done
+    /// even with the UI being in focus again
+    /// </summary>
+    public void DetectMouseInput() 
+    {
+        if (currentLesson != null)
+        {
+            if (mouseDetectTimer.isActive)
+            {
+                Debug.Log("Detected mouse or navigation input: " + mouseDetectTimer.TimeLeft());
+            }
+            currentMousePos = Input.mousePosition;
+           
+            if (currentMousePos != lastMousePos)
+            {
+                lastMousePos = currentMousePos;
+                ActivateFirstIndex();
+            }
+            Debug.Log("Current selected button = " + GameManager.instance.eventSystem.currentSelectedGameObject + " " + "currentselectedUI: " + currentSelectedUI);
+            if (GameManager.instance.eventSystem.currentSelectedGameObject != currentSelectedUI)
+            {
+                currentSelectedUI = GameManager.instance.eventSystem.currentSelectedGameObject;
+                mouseDetectTimer.SetTimer(5);
+            }
+        }
+    }
+
 }

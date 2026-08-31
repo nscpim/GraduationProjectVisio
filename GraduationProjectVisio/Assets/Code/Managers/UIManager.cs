@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : Manager
 {
@@ -15,7 +16,6 @@ public class UIManager : Manager
     private List<GameObject> lessonList = new List<GameObject>();
 
     private Color highlightColor;
-
 
 
     public override void Start()
@@ -275,6 +275,22 @@ public class UIManager : Manager
         CloseAllPanels();
         ToggleObject(GetPanelByName("LessonSelectionPanel"), true);
         FillLessonUI();
+    }
+
+    /// <summary>
+    /// Sets the first index in the navigation menu
+    /// </summary>
+    public void SetFirstIndex(bool value) 
+    {
+        if (value)
+        {
+            GameManager.instance.eventSystem.SetSelectedGameObject(GameManager.instance.SelectProfileButton.gameObject);
+        }
+        else 
+        {
+            GameManager.instance.eventSystem.SetSelectedGameObject(null);
+        }
+       
     }
 
 
