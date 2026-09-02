@@ -17,7 +17,6 @@ public class UIManager : Manager
 
     private Color highlightColor;
 
-
     public override void Start()
     {
         ColorUtility.TryParseHtmlString("#4FB6AC", out highlightColor);
@@ -167,7 +166,7 @@ public class UIManager : Manager
     /// <summary>
     /// Makes the fonts smaller
     /// </summary>
-    public void FontSizeDown()
+    public void FontSizeDown() 
     {
         for (int i = 0; i < GameManager.instance.allTextComps.Count; i++)
         {
@@ -178,7 +177,7 @@ public class UIManager : Manager
     /// <summary>
     /// Toggles the given object on or off in the hierarchy
     /// </summary>
-    /// <param name="_object"></param>
+    /// <param name="_object"></param> 
     /// <param name="toggle"></param>
     public void ToggleObject(GameObject _object, bool toggle)
     {

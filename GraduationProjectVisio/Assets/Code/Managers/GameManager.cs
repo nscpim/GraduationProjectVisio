@@ -165,7 +165,6 @@ public class GameManager : MonoBehaviour
                 autoSaveTimer.RestartTimer();
             }
         }
-
     }
 
     //public List<IDataInterface> FindAllObjectsToSave()
