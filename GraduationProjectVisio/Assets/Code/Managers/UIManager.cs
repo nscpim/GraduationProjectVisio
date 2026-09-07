@@ -17,6 +17,8 @@ public class UIManager : Manager
 
     private Color highlightColor;
 
+    
+
 
     public override void Start()
     {
@@ -201,6 +203,10 @@ public class UIManager : Manager
             lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
             lessonButton.transform.localScale = new Vector3(1.5f, 1.5f);
             ColorBlock color = lessonButton.colors;
+            TextMeshProUGUI buttonText = lessonButton.GetComponentInChildren<TextMeshProUGUI>();
+            buttonText.fontStyle = FontStyles.Bold;
+            buttonText.enableAutoSizing = true;
+            buttonText.font = GameManager.instance.font;
             color.selectedColor = highlightColor;
             lessonButton.colors = color;
             lessonButton.gameObject.AddComponent<LessonTTS>();

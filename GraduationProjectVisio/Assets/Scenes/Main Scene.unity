@@ -12475,6 +12475,7 @@ MonoBehaviour:
   voiceSource: {fileID: 1444793254}
   feedbackSource: {fileID: 1449061558}
   eventSystem: {fileID: 57282405}
+  font: {fileID: 11400000, guid: eaa393e2f47e6924db15279da00906be, type: 2}
 --- !u!114 &961621068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18850,7 +18851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1021579127558599407, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -909
+      value: -1087
       objectReference: {fileID: 0}
     - target: {fileID: 1021579127558599407, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -19970,7 +19971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315443604236962240, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Color.a
-      value: 0.38431373
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6325039394042711135, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
@@ -20505,7 +20506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8781625309597822704, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1087.2483
+      value: -899
       objectReference: {fileID: 0}
     - target: {fileID: 8781625309597822704, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.y

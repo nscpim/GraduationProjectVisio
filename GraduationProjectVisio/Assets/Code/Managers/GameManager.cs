@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
     [Header("Event Manager")]
     public EventSystem eventSystem;
 
+    public TMP_FontAsset font;
     /// <summary>
     /// Constructor class to initalize managers and the instance.
     /// </summary>
