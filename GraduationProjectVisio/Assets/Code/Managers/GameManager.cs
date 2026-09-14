@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI pathName;
     public Transform scrollBar;
     public TextMeshProUGUI previewText;
+    public Button[] mainButtons;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEditor.UIElements;
 
 public class UIManager : Manager
 {
@@ -145,10 +146,22 @@ public class UIManager : Manager
             GameManager.instance.panels[i].SetActive(false);
         }
 
-        ToggleVisualKeyBoard(true);
+        ToggleVisualKeyBoard(false);
         foreach (var pair in GameManager.GetManager<VisualKeyboardManager>().keyMap)
         {
             pair.Value.SetDefault();
+        }
+
+        SetMainMenuButtons(true);
+
+    }
+
+
+    public void SetMainMenuButtons(bool value)
+    {
+        foreach (Button item in GameManager.instance.mainButtons)
+        {
+            item.gameObject.SetActive(value);
         }
     }
 
@@ -166,7 +179,7 @@ public class UIManager : Manager
     /// <summary>
     /// Makes the fonts smaller
     /// </summary>
-    public void FontSizeDown() 
+    public void FontSizeDown()
     {
         for (int i = 0; i < GameManager.instance.allTextComps.Count; i++)
         {
@@ -190,12 +203,16 @@ public class UIManager : Manager
     public void FillLessonUI()
     {
         ClearLessonList();
+        Button tempObject = null;
         foreach (LessonData lesson in GameManager.instance.lessons)
         {
             Button lessonButton = GameObject.Instantiate(GameManager.instance.lessonButtonPrefab,
                   GameManager.instance.lessonButtonPrefab.gameObject.transform.position,
                   Quaternion.identity, GetPanelByName("LessonSelectionPanel").transform);
-
+            if (tempObject == null)
+            {
+                tempObject = lessonButton;
+            }
             lessonButton.GetComponentInChildren<TextMeshProUGUI>().text = lesson.lessonName;
             lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
             lessonButton.transform.localScale = new Vector3(1.5f, 1.5f);
@@ -208,6 +225,8 @@ public class UIManager : Manager
         }
         Debug.Log("Filled in all Lessons");
         ToggleVisualKeyBoard(false);
+        SetFirstIndex(false, tempObject);
+        tempObject = null;
     }
 
     /// <summary>
@@ -229,8 +248,9 @@ public class UIManager : Manager
     public void SetupLesson(LessonData lesson)
     {
         // ToggleObject(GameManager.instance.scrollBar.gameObject, false);
-        ToggleVisualKeyBoard(true);
         CloseAllPanels();
+        SetMainMenuButtons(false);
+        ToggleVisualKeyBoard(true);
         GameManager.GetManager<LessonManager>().SetLesson(lesson.lessonName);
         ToggleObject(GetPanelByName("InLessonPanel"), true);
     }
@@ -263,6 +283,7 @@ public class UIManager : Manager
     public void CreateProfileButton()
     {
         OnCreateProfileClicked();
+        SetMainMenuButtons(false);
         ToggleObject(GetPanelByName("ProfilesPanel"), false);
     }
 
@@ -272,24 +293,31 @@ public class UIManager : Manager
     public void SelectLessonProfileButton()
     {
         CloseAllPanels();
+        SetMainMenuButtons(false);
         ToggleObject(GetPanelByName("LessonSelectionPanel"), true);
         FillLessonUI();
+
     }
 
     /// <summary>
     /// Sets the first index in the navigation menu
     /// </summary>
-    public void SetFirstIndex(bool value) 
+    public void SetFirstIndex(bool value, Button _object)
     {
         if (value)
         {
-            GameManager.instance.eventSystem.SetSelectedGameObject(GameManager.instance.SelectProfileButton.gameObject);
+            GameManager.instance.eventSystem.SetSelectedGameObject(GameManager.instance.magnifyGlass.gameObject);
         }
-        else 
+        else if (!value && _object == null)
         {
             GameManager.instance.eventSystem.SetSelectedGameObject(null);
         }
-       
+        else
+        {
+            GameManager.instance.eventSystem.SetSelectedGameObject(_object.gameObject);
+        }
+
+
     }
 
 

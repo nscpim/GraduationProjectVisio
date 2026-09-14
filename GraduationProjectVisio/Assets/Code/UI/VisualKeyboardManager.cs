@@ -19,5 +19,6 @@ public class VisualKeyboardManager : Manager
         {
             keyMap[key.key] = key;
         }
+        GameManager.GetManager<UIManager>().ToggleVisualKeyBoard(false);
     }
 }

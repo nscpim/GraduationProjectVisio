@@ -4461,7 +4461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &357210078
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12594,6 +12594,11 @@ MonoBehaviour:
   pathName: {fileID: 215732713}
   scrollBar: {fileID: 0}
   previewText: {fileID: 0}
+  mainButtons:
+  - {fileID: 324497995}
+  - {fileID: 340697153}
+  - {fileID: 1570499250}
+  - {fileID: 1760767621}
   lessons:
   - {fileID: 11400000, guid: 20fca4b437c12c94a99c1732ba03835d, type: 2}
   - {fileID: 11400000, guid: 0049f0231506deb40b9dfb1780000794, type: 2}
@@ -16986,7 +16991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1359741206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19369,7 +19374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333042369966460593, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2540691359018345096, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Colors.m_NormalColor.a

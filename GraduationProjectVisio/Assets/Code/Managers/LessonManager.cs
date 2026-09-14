@@ -87,7 +87,7 @@ public class LessonManager : Manager
         if (mouseDetectTimer.TimerDone() && mouseDetectTimer.isActive)
         {
             mouseDetectTimer.StopTimer();
-            GameManager.GetManager<UIManager>().SetFirstIndex(false);
+            GameManager.GetManager<UIManager>().SetFirstIndex(false, null);
         }
 
         ReceiveInput();
@@ -300,7 +300,7 @@ public class LessonManager : Manager
 
     public void ActivateFirstIndex() 
     {
-        GameManager.GetManager<UIManager>().SetFirstIndex(true);
+        GameManager.GetManager<UIManager>().SetFirstIndex(true, null);
         mouseDetectTimer.SetTimer(5);
     }
 
