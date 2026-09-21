@@ -216,6 +216,9 @@ public class UIManager : Manager
             lessonButton.GetComponentInChildren<TextMeshProUGUI>().text = lesson.lessonName;
             lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
             lessonButton.transform.localScale = new Vector3(1.5f, 1.5f);
+            Image icon = lessonButton.GetComponent<Image>();
+            icon.sprite = lesson.icon.sprite;
+
             ColorBlock color = lessonButton.colors;
             color.selectedColor = highlightColor;
             lessonButton.colors = color;

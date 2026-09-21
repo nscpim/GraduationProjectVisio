@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "LessonData", menuName = "Scriptable Objects/LessonData")]
 public class LessonData : ScriptableObject
@@ -8,6 +9,7 @@ public class LessonData : ScriptableObject
     public string id;
     public string lessonName;
     public List<TypingStep> steps;
+    public Image icon;
 }
 
 [System.Serializable]
