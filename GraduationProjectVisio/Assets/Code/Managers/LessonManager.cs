@@ -295,7 +295,8 @@ public class LessonManager : Manager
         Debug.LogWarning("Completed the lesson");
         GameManager.GetManager<SaveLoadManager>().SaveCurrentProfile();
         GameManager.GetManager<UIManager>().CloseAllPanels();
-
+        GameManager.instance.ToggleFontButtons(false);
+        GameManager.GetManager<UIManager>().ToggleVisualKeyBoard(false);
     }
 
     public void ActivateFirstIndex() 

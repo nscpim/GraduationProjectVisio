@@ -34,18 +34,7 @@ public class UIManager : Manager
     {
         StringBuilder p = new StringBuilder();
 
-        string newText = text.ToString();
-        newText = ReplaceString(newText, "Alpha");
-        newText = ReplaceString(newText, "Return", "Enter");
-        newText = ReplaceString(newText, "LeftArrow", "Pijltje Links");
-        newText = ReplaceString(newText, "RightArrow", "Pijltje Rechts");
-        newText = ReplaceString(newText, "UpArrow", "Pijltje Boven");
-        newText = ReplaceString(newText, "DownArrow", "Pijltje Onder");
-        newText = ReplaceString(newText, "LeftAlt", "Linker Alt");
-        newText = ReplaceString(newText, "RightAlt", "Rechter Alt");
-        newText = ReplaceString(newText, "LeftCtrl", "Linker Control");
-        newText = ReplaceString(newText, "RightAlt", "Rechter Control");
-        p.Append(newText.ToString() + " + ");
+
 
 
         for (int i = 0; i < combinationKeys.Count; i++)
@@ -61,15 +50,23 @@ public class UIManager : Manager
             newKey = ReplaceString(newKey, "RightAlt", "Rechter Alt");
             newKey = ReplaceString(newKey, "LeftCtrl", "Linker Control");
             newKey = ReplaceString(newKey, "RightAlt", "Rechter Control");
-            if (i == combinationKeys.Count - 1)
-            {
-                p.Append(newKey);
-            }
-            else
-            {
-                p.Append(newKey + " + ");
-            }
+            p.Append(newKey + " + ");
+
         }
+
+        string newText = text.ToString();
+        newText = ReplaceString(newText, "Alpha");
+        newText = ReplaceString(newText, "Return", "Enter");
+        newText = ReplaceString(newText, "LeftArrow", "Pijltje Links");
+        newText = ReplaceString(newText, "RightArrow", "Pijltje Rechts");
+        newText = ReplaceString(newText, "UpArrow", "Pijltje Boven");
+        newText = ReplaceString(newText, "DownArrow", "Pijltje Onder");
+        newText = ReplaceString(newText, "LeftAlt", "Linker Alt");
+        newText = ReplaceString(newText, "RightAlt", "Rechter Alt");
+        newText = ReplaceString(newText, "LeftCtrl", "Linker Control");
+        newText = ReplaceString(newText, "RightAlt", "Rechter Control");
+        p.Append(newText.ToString());
+
         textElement.text = string.Format(p.ToString());
         textElement.color = color;
 
@@ -151,7 +148,7 @@ public class UIManager : Manager
         {
             pair.Value.SetDefault();
         }
-
+        GameManager.instance.ToggleFontButtons(false);
         SetMainMenuButtons(true);
 
     }
@@ -217,12 +214,15 @@ public class UIManager : Manager
             lessonButton.onClick.AddListener(() => SetupLesson(GameManager.GetManager<LessonManager>().GetLesson(lesson.lessonName)));
             lessonButton.transform.localScale = new Vector3(1.5f, 1.5f);
             Image icon = lessonButton.GetComponent<Image>();
-            icon.sprite = lesson.icon.sprite;
-
+            icon.sprite = lesson.icon;
             ColorBlock color = lessonButton.colors;
             color.selectedColor = highlightColor;
             lessonButton.colors = color;
             lessonButton.gameObject.AddComponent<LessonTTS>();
+            TextMeshProUGUI textComponent = lessonButton.GetComponentInChildren<TextMeshProUGUI>();
+            Color textColor = textComponent.color;
+            textColor.a = 0;
+            textComponent.color = textColor;
             lessonList.Add(lessonButton.gameObject);
             // ToggleObject(GameManager.instance.scrollBar.gameObject, true);
         }
@@ -254,6 +254,7 @@ public class UIManager : Manager
         CloseAllPanels();
         SetMainMenuButtons(false);
         ToggleVisualKeyBoard(true);
+        GameManager.instance.ToggleFontButtons(true);
         GameManager.GetManager<LessonManager>().SetLesson(lesson.lessonName);
         ToggleObject(GetPanelByName("InLessonPanel"), true);
     }

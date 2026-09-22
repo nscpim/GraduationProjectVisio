@@ -107,3 +107,4 @@ MonoBehaviour:
     targetKey: 306
     requiredKeys: 3001000067000000
     instructionIfWrong: 
+  icon: {fileID: 21300000, guid: 1b3a28425e28efe4099041b9ae187389, type: 3}

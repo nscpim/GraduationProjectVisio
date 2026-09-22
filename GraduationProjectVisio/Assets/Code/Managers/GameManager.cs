@@ -211,4 +211,10 @@ public class GameManager : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void ToggleFontButtons(bool value) 
+    {
+        fontSizeUp.gameObject.SetActive(value);
+        fontSizeDown.gameObject.SetActive(value);
+    }
 }

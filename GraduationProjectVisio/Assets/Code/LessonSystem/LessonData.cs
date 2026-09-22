@@ -9,7 +9,7 @@ public class LessonData : ScriptableObject
     public string id;
     public string lessonName;
     public List<TypingStep> steps;
-    public Image icon;
+    public Sprite icon;
 }
 
 [System.Serializable]
