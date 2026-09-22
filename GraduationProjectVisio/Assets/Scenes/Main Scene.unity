@@ -19833,6 +19833,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4253727181156703033, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253727181156703033, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_RaycastTarget
       value: 1
       objectReference: {fileID: 0}
