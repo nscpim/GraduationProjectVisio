@@ -12502,7 +12502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19205,8 +19205,20 @@ PrefabInstance:
       value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 1534580534245400752, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3169
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534580534245400752, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.3169
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534580534245400752, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.3169
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534580534245400752, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1534580534245400752, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -19997,6 +20009,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: eaa393e2f47e6924db15279da00906be, type: 2}
     - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2565331679726199994, guid: eaa393e2f47e6924db15279da00906be, type: 2}
@@ -20195,8 +20211,20 @@ PrefabInstance:
       value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6152488312804479219, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3169
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152488312804479219, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.3169
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152488312804479219, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.3169
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152488312804479219, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -50
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 6152488312804479219, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -20766,6 +20794,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: eaa393e2f47e6924db15279da00906be, type: 2}
     - target: {fileID: 8095529045941335498, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095529045941335498, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_isRightToLeft
       value: 0
       objectReference: {fileID: 0}
@@ -20796,7 +20828,7 @@ PrefabInstance:
     - target: {fileID: 8141018591384883234, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: de80ea440474cdd4daf37f5a80ba321c, type: 3}
+      objectReference: {fileID: 21300000, guid: fa6e2852715c62a478bb39abb5a8eac3, type: 3}
     - target: {fileID: 8464670451476367274, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -20864,7 +20896,7 @@ PrefabInstance:
     - target: {fileID: 8811220649000364327, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2435792117448ed4a9612cc361d3e4fa, type: 3}
+      objectReference: {fileID: 21300000, guid: c689e5fbac349dc4ea3cf30fb7675c66, type: 3}
     - target: {fileID: 8831961383552710648, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Type
       value: 0

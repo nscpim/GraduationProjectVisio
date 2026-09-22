@@ -405,6 +405,7 @@ public class UIManager : Manager
     public void StartCreatingLesson()
     {
         CloseAllPanels();
+        SetMainMenuButtons(false);
         ToggleObject(GetPanelByName("LessonCreatorPanel"), true);
         ToggleVisualKeyBoard(false);
         PrepareLesson();
@@ -430,6 +431,7 @@ public class UIManager : Manager
         // Add a default step
         AddStep();
         ToggleVisualKeyBoard(false);
+        SetFirstIndex(false, GameManager.instance.addStep);
     }
 
     /// <summary>
