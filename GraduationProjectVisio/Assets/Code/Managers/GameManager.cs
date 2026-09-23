@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
 
         //Starting the auto save timer
         autoSaveTimer = new Timer(0, "autosave");
-        autoSaveTimer.SetTimer(2);
+        autoSaveTimer.SetTimer(1);
 
         //Adding the audio source to the audio system
         GameManager.GetManager<AudioManager>().AddAudioSource(feedbackSource);
@@ -161,6 +161,7 @@ public class GameManager : MonoBehaviour
         {
             if (autoSaveTimer.isActive && autoSaveTimer.TimerDone())
             {
+                allTextComps.Clear();
                 allTextComps = FindAllTextComponents();
                 Debug.Log("Auto Saved");
                 autoSaveTimer.RestartTimer();

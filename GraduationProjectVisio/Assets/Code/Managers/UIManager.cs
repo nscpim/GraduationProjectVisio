@@ -119,7 +119,7 @@ public class UIManager : Manager
     /// <summary>
     /// Enabled or disables the magnifying glass
     /// </summary>
-    public void MagnifyToggle()
+    public void MagnifyToggle() 
     {
         if (GameManager.instance.magnifyObject.activeInHierarchy)
         {
