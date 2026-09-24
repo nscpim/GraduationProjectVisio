@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     public Transform scrollBar;
     public TextMeshProUGUI previewText;
     public Button[] mainButtons;
+    public TMP_FontAsset sarifFont;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
@@ -140,7 +141,7 @@ public class GameManager : MonoBehaviour
 
         //Starting the auto save timer
         autoSaveTimer = new Timer(0, "autosave");
-        autoSaveTimer.SetTimer(1);
+        autoSaveTimer.SetTimer(.2f);
 
         //Adding the audio source to the audio system
         GameManager.GetManager<AudioManager>().AddAudioSource(feedbackSource);
@@ -163,6 +164,11 @@ public class GameManager : MonoBehaviour
             {
                 allTextComps.Clear();
                 allTextComps = FindAllTextComponents();
+                for (int i = 0; i < allTextComps.Count; i++)
+                {
+                    allTextComps[i].font = sarifFont;
+                }
+
                 Debug.Log("Auto Saved");
                 autoSaveTimer.RestartTimer();
             }
