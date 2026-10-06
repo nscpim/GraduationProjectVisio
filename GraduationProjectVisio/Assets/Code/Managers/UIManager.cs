@@ -16,6 +16,7 @@ public class UIManager : Manager
     private List<GameObject> lessonList = new List<GameObject>();
 
     private Color highlightColor;
+    private bool settingsBool = false;
 
     public override void Start()
     {
@@ -118,7 +119,7 @@ public class UIManager : Manager
     /// <summary>
     /// Enabled or disables the magnifying glass
     /// </summary>
-    public void MagnifyToggle() 
+    public void MagnifyToggle()
     {
         if (GameManager.instance.magnifyObject.activeInHierarchy)
         {
@@ -148,6 +149,8 @@ public class UIManager : Manager
             pair.Value.SetDefault();
         }
         GameManager.instance.ToggleFontButtons(false);
+        GameManager.instance.volumeDown.gameObject.SetActive(false);
+        GameManager.instance.volumeUp.gameObject.SetActive(false);
         SetMainMenuButtons(true);
 
     }
@@ -323,6 +326,20 @@ public class UIManager : Manager
 
     }
 
+    public void CloseApplication()
+    {
+        Application.Quit();
+    }
+
+
+    public void ToggleSettingsMenu()
+    {
+        GameManager.instance.ToggleFontButtons(!settingsBool);
+        GameManager.instance.volumeDown.gameObject.SetActive(!settingsBool);
+        GameManager.instance.volumeUp.gameObject.SetActive(!settingsBool);
+        SetMainMenuButtons(settingsBool);
+        SetFirstIndex(true, null);
+    }
 
     #region Profile
     /// <summary>

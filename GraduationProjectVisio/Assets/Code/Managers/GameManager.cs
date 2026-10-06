@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI previewText;
     public Button[] mainButtons;
     public TMP_FontAsset sarifFont;
+    public Button settingsButton;
+    public Button quitButton;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
@@ -138,6 +140,8 @@ public class GameManager : MonoBehaviour
         saveLesson.onClick.AddListener(GameManager.GetManager<UIManager>().SaveLesson);
         addStep.onClick.AddListener(GameManager.GetManager<UIManager>().AddStep);
         profile.onClick.AddListener(GameManager.GetManager<UIManager>().OpenProfilePanel);
+        settingsButton.onClick.AddListener(GameManager.GetManager<UIManager>().ToggleSettingsMenu);
+        quitButton.onClick.AddListener(GameManager.GetManager<UIManager>().CloseApplication);
 
         //Starting the auto save timer
         autoSaveTimer = new Timer(0, "autosave");
