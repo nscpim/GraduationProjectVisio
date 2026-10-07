@@ -34,7 +34,6 @@ public class SaveLoadManager : Manager
             LessonSaveData data = JsonUtility.FromJson<LessonSaveData>(json);
             LessonData so = LessonConverter.ToScriptableObject(data);
             loadedLessons.Add(so);
-            
         }
         if (reload)
         {

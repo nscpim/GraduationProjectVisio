@@ -7,4 +7,5 @@ public class LessonSaveData
     public string id;
     public string lessonName;
     public List<TypingStepSaveData> steps;
+    public Sprite icon;
 }

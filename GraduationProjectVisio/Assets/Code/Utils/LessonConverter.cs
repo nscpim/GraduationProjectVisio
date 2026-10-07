@@ -36,6 +36,7 @@ public static class LessonConverter
         so.id = data.id;
         so.lessonName = data.lessonName;
         so.name = data.lessonName;
+        so.icon = data.icon;
         return so;
     }
 }
