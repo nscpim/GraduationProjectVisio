@@ -5,6 +5,8 @@ using System.Text;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Linq;
+using JetBrains.Annotations;
+using System.IO;
 
 public class UIManager : Manager
 {
@@ -543,6 +545,21 @@ public class UIManager : Manager
 
         GameManager.GetManager<SaveLoadManager>().LoadAllLessons(true);
 
+
+
+       
+
+    }
+
+    public void UploadIcon() 
+    {
+        string path = Path.Combine(Application.persistentDataPath, "icons");
+        
+
+
+
+    
+    
     }
     #endregion
 }

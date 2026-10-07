@@ -12927,6 +12927,7 @@ MonoBehaviour:
   - {fileID: 1526298433}
   - {fileID: 98644887}
   - {fileID: 706156710}
+  customLessonIcon: {fileID: 0}
   lessons:
   - {fileID: 11400000, guid: 20fca4b437c12c94a99c1732ba03835d, type: 2}
   - {fileID: 11400000, guid: 0049f0231506deb40b9dfb1780000794, type: 2}
