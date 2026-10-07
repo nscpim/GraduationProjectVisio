@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Linq;
 
 public class UIManager : Manager
 {
@@ -149,6 +150,10 @@ public class UIManager : Manager
         GameManager.instance.volumeDown.gameObject.SetActive(false);
         GameManager.instance.volumeUp.gameObject.SetActive(false);
         SetMainMenuButtons(true);
+        for (int i = 0; i < GameManager.instance.iconImages.Length; i++)
+        {
+            GameManager.instance.iconImages[i].gameObject.SetActive(false);
+        }
 
     }
 
@@ -334,7 +339,11 @@ public class UIManager : Manager
         GameManager.instance.volumeDown.gameObject.SetActive(!settingsBool);
         GameManager.instance.volumeUp.gameObject.SetActive(!settingsBool);
         SetMainMenuButtons(settingsBool);
-        SetFirstIndex(true, null);
+        for (int i = 0; i < GameManager.instance.iconImages.Length; i++)
+        {
+            GameManager.instance.iconImages[i].gameObject.SetActive(true);
+        }
+        SetFirstIndex(false, GameManager.instance.fontSizeUp);
     }
 
     #region Profile

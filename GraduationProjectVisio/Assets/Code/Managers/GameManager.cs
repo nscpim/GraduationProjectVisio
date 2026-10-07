@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public TMP_FontAsset sarifFont;
     public Button settingsButton;
     public Button quitButton;
+    public Image[] iconImages;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;
