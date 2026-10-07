@@ -34,9 +34,6 @@ public class UIManager : Manager
     {
         StringBuilder p = new StringBuilder();
 
-
-
-
         for (int i = 0; i < combinationKeys.Count; i++)
         {
             string newKey = combinationKeys[i].ToString();
@@ -256,7 +253,6 @@ public class UIManager : Manager
         CloseAllPanels();
         SetMainMenuButtons(false);
         ToggleVisualKeyBoard(true);
-        GameManager.instance.ToggleFontButtons(true);
         GameManager.GetManager<LessonManager>().SetLesson(lesson.lessonName);
         ToggleObject(GetPanelByName("InLessonPanel"), true);
     }

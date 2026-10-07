@@ -37,4 +37,4 @@ MonoBehaviour:
     targetKey: 301
     requiredKeys: 340100006d000000
     instructionIfWrong: Dat was niet juist. Probeer het opnieuw.
-  icon: {fileID: 21300000, guid: 1b3a28425e28efe4099041b9ae187389, type: 3}
+  icon: {fileID: 21300000, guid: 3a3343459f42c94408a3770ca7000d55, type: 3}

@@ -128,4 +128,4 @@ MonoBehaviour:
     targetKey: 304
     requiredKeys: 2c000000
     instructionIfWrong: Dit was niet goed. Probeer het opnieuw
-  icon: {fileID: 21300000, guid: 1b3a28425e28efe4099041b9ae187389, type: 3}
+  icon: {fileID: 21300000, guid: d25ecdb78ad05494a8a7ebbe65a9a4dd, type: 3}
