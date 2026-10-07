@@ -221,13 +221,21 @@ public class UIManager : Manager
             lessonButton.transform.localScale = new Vector3(1.5f, 1.5f);
             Image icon = lessonButton.GetComponent<Image>();
             icon.sprite = lesson.icon;
+
             ColorBlock color = lessonButton.colors;
             color.selectedColor = highlightColor;
             lessonButton.colors = color;
             lessonButton.gameObject.AddComponent<LessonTTS>();
             TextMeshProUGUI textComponent = lessonButton.GetComponentInChildren<TextMeshProUGUI>();
             Color textColor = textComponent.color;
-            textColor.a = 0;
+            if (!lesson.icon)
+            {
+                textColor.a = 100;
+            }
+            else
+            {
+                textColor.a = 0;
+            }
             textComponent.color = textColor;
             lessonList.Add(lessonButton.gameObject);
             // ToggleObject(GameManager.instance.scrollBar.gameObject, true);
@@ -546,20 +554,21 @@ public class UIManager : Manager
         GameManager.GetManager<SaveLoadManager>().LoadAllLessons(true);
 
 
+    }
 
-       
+    public void SaveIcon()
+    {
 
     }
 
-    public void UploadIcon() 
+
+    public void UploadIcon()
     {
         string path = Path.Combine(Application.persistentDataPath, "icons");
-        
+        Sprite sprite = GameManager.instance.customLessonIcon.sprite;
 
 
 
-    
-    
     }
     #endregion
 }
