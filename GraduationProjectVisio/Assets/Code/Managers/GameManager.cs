@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     public Button settingsButton;
     public Button quitButton;
     public Image[] iconImages;
+    public Image customLessonIcon;
     [Space(10)]
     [Header("LessonManager")]
     public List<LessonData> lessons;

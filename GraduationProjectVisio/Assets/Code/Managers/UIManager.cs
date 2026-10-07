@@ -492,8 +492,6 @@ public class UIManager : Manager
         //Somehow the prefab location is being used, setting it to a better location.
         var requiredKey = GameObject.Instantiate(GameManager.instance.requiredKey, new Vector3(GameManager.instance.requiredKey.transform.position.x + 1475,
             lastTypingStep.transform.position.y, GameManager.instance.requiredKey.transform.position.z), Quaternion.identity, lastTypingStep.GetComponent<TypingStepUI>().requiredKeysContainer);
-
-
     }
 
     /// <summary>
@@ -515,8 +513,8 @@ public class UIManager : Manager
 
         lesson.id = System.Guid.NewGuid().ToString();
         lesson.lessonName = GameManager.instance.lessonNameInput.text;
-
         lesson.steps = new List<TypingStepSaveData>();
+        lesson.icon = GameManager.instance.customLessonIcon.sprite;
 
         foreach (var stepUI in stepUIs)
         {
