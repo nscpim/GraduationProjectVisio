@@ -454,6 +454,10 @@ public class UIManager : Manager
         SetMainMenuButtons(false);
         ToggleObject(GetPanelByName("LessonCreatorPanel"), true);
         ToggleVisualKeyBoard(false);
+        for (int i = 0; i < GameManager.instance.mainIconImages.Length; i++)
+        {
+            GameManager.instance.mainIconImages[i].gameObject.SetActive(false);
+        }
         PrepareLesson();
     }
 
@@ -464,8 +468,6 @@ public class UIManager : Manager
     {
         Debug.Log("Start creating lesson");
 
-        // Clear lesson name
-        GameManager.instance.lessonNameInput.text = "";
 
         // Clear old steps
         foreach (var step in stepUIs)
@@ -567,8 +569,7 @@ public class UIManager : Manager
         Debug.Log("Lesson saved with " + lesson.steps.Count + " steps!");
 
         GameManager.GetManager<SaveLoadManager>().LoadAllLessons(true);
-
-
+        CloseAllPanels();
     }
 
     public void SaveIcon()
