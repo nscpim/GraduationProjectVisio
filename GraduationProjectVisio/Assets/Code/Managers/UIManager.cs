@@ -156,7 +156,10 @@ public class UIManager : Manager
         {
             GameManager.instance.iconImages[i].gameObject.SetActive(false);
         }
-
+        for (int i = 0; i < GameManager.instance.mainIconImages.Length; i++)
+        {
+            GameManager.instance.mainIconImages[i].gameObject.SetActive(true);
+        }
     }
 
 
@@ -269,6 +272,10 @@ public class UIManager : Manager
         SetMainMenuButtons(false);
         ToggleVisualKeyBoard(true);
         GameManager.GetManager<LessonManager>().SetLesson(lesson.lessonName);
+        for (int i = 0; i < GameManager.instance.mainIconImages.Length; i++)
+        {
+            GameManager.instance.mainIconImages[i].gameObject.SetActive(false);
+        }
         ToggleObject(GetPanelByName("InLessonPanel"), true);
     }
 
@@ -311,6 +318,10 @@ public class UIManager : Manager
     {
         CloseAllPanels();
         SetMainMenuButtons(false);
+        for (int i = 0; i < GameManager.instance.mainIconImages.Length; i++)
+        {
+            GameManager.instance.mainIconImages[i].gameObject.SetActive(false);
+        }
         ToggleObject(GetPanelByName("LessonSelectionPanel"), true);
         FillLessonUI();
 
@@ -352,6 +363,10 @@ public class UIManager : Manager
         for (int i = 0; i < GameManager.instance.iconImages.Length; i++)
         {
             GameManager.instance.iconImages[i].gameObject.SetActive(true);
+        }
+        for (int i = 0; i < GameManager.instance.mainIconImages.Length; i++)
+        {
+            GameManager.instance.mainIconImages[i].gameObject.SetActive(false);
         }
         SetFirstIndex(false, GameManager.instance.fontSizeUp);
     }
