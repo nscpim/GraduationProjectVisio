@@ -21085,11 +21085,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6196379922840728510, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_text
-      value: Font Kleiner
+      value: Lettertype Kleiner
       objectReference: {fileID: 0}
     - target: {fileID: 6196379922840728510, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontSize
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6196379922840728510, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontAsset
@@ -21113,7 +21113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6196379922840728510, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontSizeBase
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6196379922840728510, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_overflowMode
@@ -21449,11 +21449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7295111625829160968, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_text
-      value: Font Groter
+      value: Lettertype Groter
       objectReference: {fileID: 0}
     - target: {fileID: 7295111625829160968, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontSize
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7295111625829160968, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontAsset
@@ -21477,7 +21477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7295111625829160968, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontSizeBase
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7295111625829160968, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_overflowMode
@@ -22257,7 +22257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5571a1993c5ffbe45a019a13e6c2756d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UserInterfaceTTS
-  textToSpeak: Font groter
+  textToSpeak: Lettertype groter
 --- !u!114 &1469986609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22270,7 +22270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5571a1993c5ffbe45a019a13e6c2756d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UserInterfaceTTS
-  textToSpeak: Font kleiner
+  textToSpeak: Lettertype kleiner
 --- !u!1 &1488338074
 GameObject:
   m_ObjectHideFlags: 0
