@@ -104,7 +104,7 @@ MonoBehaviour:
     instructionIfWrong: Dit was niet goed. Probeer het opnieuw
   - instructionText: Volledige lijst met letternavigatie  \n Meld alle plaatsmarkeringen
     targetKey: 308
-    requiredKeys: 370100006b000000
+    requiredKeys: 7a0000006b000000
     instructionIfWrong: Dit was niet goed. Probeer het opnieuw
   - instructionText: Volledige lijst met letternavigatie  \n Ga naar cel (in een
       tabel)

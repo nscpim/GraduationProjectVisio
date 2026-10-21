@@ -50,8 +50,8 @@ public class UIManager : Manager
             newKey = ReplaceString(newKey, "RightAlt", "Rechter Alt");
             newKey = ReplaceString(newKey, "LeftCtrl", "Linker Control");
             newKey = ReplaceString(newKey, "RightAlt", "Rechter Control");
+            newKey = ReplaceString(newKey, "LeftControl", "Linker Control");
             p.Append(newKey + " + ");
-
         }
 
         string newText = text.ToString();
@@ -65,6 +65,7 @@ public class UIManager : Manager
         newText = ReplaceString(newText, "RightAlt", "Rechter Alt");
         newText = ReplaceString(newText, "LeftCtrl", "Linker Control");
         newText = ReplaceString(newText, "RightAlt", "Rechter Control");
+        newText = ReplaceString(newText, "LeftControl", "Linker Control");
         p.Append(newText.ToString());
 
         textElement.text = string.Format(p.ToString());

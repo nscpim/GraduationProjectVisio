@@ -20810,6 +20810,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_text
+      value: "JAWS Sneltoetsen voor spraak \nAlles laten voorlezen"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontSize
       value: 100
       objectReference: {fileID: 0}
@@ -20820,7 +20824,7 @@ PrefabInstance:
     - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: eaa393e2f47e6924db15279da00906be, type: 2}
+      objectReference: {fileID: 11400000, guid: feaaba539be3b324eb2de450c35fbcb4, type: 2}
     - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontStyle
       value: 1
@@ -20844,7 +20848,7 @@ PrefabInstance:
     - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2565331679726199994, guid: eaa393e2f47e6924db15279da00906be, type: 2}
+      objectReference: {fileID: 3426279313728462530, guid: feaaba539be3b324eb2de450c35fbcb4, type: 2}
     - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_TextWrappingMode
       value: 0
@@ -20852,6 +20856,10 @@ PrefabInstance:
     - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4283963146
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983171141740256516, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5098987000304701121, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Spacing.x
@@ -20907,7 +20915,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5550696945136836368, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75484353
+      value: 0.7081414
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550696945136836368, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75570136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550696945136836368, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7557013
       objectReference: {fileID: 0}
     - target: {fileID: 5550696945136836368, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -21017,7 +21033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5922639024351482297, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 6141583784330249318, guid: b7710bffbcb09bf488396bdc5023bb3b, type: 3}
       propertyPath: m_Name
